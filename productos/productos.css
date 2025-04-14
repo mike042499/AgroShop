@@ -1,0 +1,50 @@
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+
+}
+
+form{
+    display: flex;
+  justify-content: center;
+}
+.container-imagen img{
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+
+.card{
+    width: 30%; /* Esto da 3 por fila en desktop */
+    min-width: 250px;
+    max-width: 300px;
+    margin: 0.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
