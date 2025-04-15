@@ -1,3 +1,6 @@
+*{
+    border: 1px solid red;
+}
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -48,5 +51,9 @@
     border-radius: 1rem;
   }
 
+#tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+}
   
   
