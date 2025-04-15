@@ -60,6 +60,7 @@ header {
 #navbar a {
     text-decoration: none;
     color: aliceblue;
+    font-size: 20px;
 }
 
 #logo {
@@ -70,4 +71,246 @@ header {
 
 #logo img {
     height: 100%;
+}
+
+/* Product-Detail */
+
+/* Background */
+
+#background-container {
+    height: 80vh;
+    display: flex;
+}
+
+#decorative {
+    height: 100%;
+    width: 32vw;
+    display: flex;
+}
+
+#background-image {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    /* Imagen de fondo con color */
+    background-image: url(/img/imagen-detalle.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+/* Product Info */
+
+#product-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 80vh;
+    width: 100%;
+}
+
+#product-image {
+    height: fit-content;
+    width: fit-content;
+    margin-left: 18vw;
+}
+
+#product-image img {
+    display: block;
+    height: 400px;
+    width: 400px;
+}
+
+#product-text {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+#product-text h1 {
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0;
+    font-family: 'Cormorant';
+    font-size: 64px;
+}
+
+#product-cost {
+    display: flex;
+}
+
+#product-text h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+}
+
+#product-text h2 {
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: var(--buttons-color);
+    text-decoration: line-through;
+}
+
+#product-text p {
+    font-size: 20px;
+}
+
+#product-amount {
+    display: flex;
+    flex-direction: column;
+}
+
+#product-amount p {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--buttons-color);
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+#amount-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#minor-amount {
+    height: 50px;
+    width: 78px;
+    border-radius: 50px;
+    /* border: 1px solid black; */
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    font-size: 32px;
+    background-color: rgba(84, 111, 1, 0.25);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#mayor-amount {
+    height: 50px;
+    width: 78px;
+    border-radius: 50px;
+    /* border: 1px solid black; */
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    font-size: 32px;
+    background-color: rgba(84, 111, 1, 0.25);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#minor-amount:hover {
+    background-color: var(--secondary-color);
+}
+
+#minor-amount:active {
+    background-color: var(--primary-color);
+}
+
+#mayor-amount:hover {
+    background-color: var(--secondary-color);
+}
+
+#mayor-amount:active {
+    background-color: var(--primary-color);
+}
+
+#amount {
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 154px;
+    /* border: 1px solid black; */
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(168, 143, 107, 0.25);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#purchase-resume {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#purchase-resume h3 {
+    margin: 0 50px;
+}
+
+#shopping-cart {
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--buttons-color);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+}
+
+#shopping-cart svg {
+    height: 34px;
+    width: 34px;
+    fill: var(--black);
+}
+
+#shopping-cart:hover{
+    background-color: var(--secondary-color);
+}
+
+#shopping-cart:active{
+    background-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    height: 10vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer h4 {
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#social-media {
+    display: flex;
+    align-items: center;
+}
+
+#social-media p {
+    margin: 0;
+}
+
+#social-media ul {
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+#social-media li {
+    margin-left: 20px;
 }
