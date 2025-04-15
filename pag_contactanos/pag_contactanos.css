@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #D8CABB;
+  }
+
+.navbar{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    margin: 0%;
+    background-color: #546F01;
+}
+
+.navbar li{
+    margin: 0 50px;
+}
+
+.navbar a{
+    padding: auto;
+    text-decoration: none;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+.contenedor-inicio{
+    position: relative;
+    width: 100%;
+    height: 305px;
+}
+
+.contenedor-inicio img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+.filtro {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(134, 134, 134, 0.35);
+    z-index: 1;
+}
+
+
+.contenedor-inicio h1 {
+    position: absolute;
+    font-family: "Cormorant";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: bold;
+    margin: 60px 106px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.contenedor-formulario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px 104px;
+    gap: 40px; 
+    width: 50%;
+}
+
+
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+#form h2{
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #181F0D;
+}
+
+.formulario {
+    width: 35.5rem;
+    height: 4.5625rem;
+    padding: 0 23px;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1.25rem;
+    border-radius: 20px;
+    border-color: #ffffff;
+    box-shadow: none;
+    border: 1px solid white;
+    box-shadow: none;
+    outline: none;
+}
+
+#bttnEnviar{
+    width: 9.87rem;
+    height: 3.65rem;
+    margin: 20px 300px;
+}
+
+.campesino{
+    display: flex;
+    width: 50%;
+    height: 728px;
+    right: 0;
+}
