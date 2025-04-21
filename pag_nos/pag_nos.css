@@ -28,7 +28,8 @@ body {
 /* TITULOS */
 h2,
 h3,
-h4 {
+h4,
+h5 {
     font-size: 32px;
     text-align: center;
 }
