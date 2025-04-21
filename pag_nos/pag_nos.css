@@ -5,45 +5,50 @@
     --madera: #a88f6b;
     --blanco: #ffffff;
     --negro: #000000;
-  }
-  
-  * {
+}
+
+* {
     font-family: 'DM Sans', sans-serif;
-  }
-  
-  body {
+}
+
+body {
     background-color: var(--beige-suave);
-  }
-  
-  /* HEADER */
-  header {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--verde-principal);
-  }
-  
-  /* TITULOS */
-  h2, h3, h4 {
+}
+
+/*NAVBAR*/
+.container-fluid {
+    background-color: #546f01;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;;
+}
+
+/* TITULOS */
+h2,
+h3,
+h4 {
     font-size: 32px;
     text-align: center;
-  }
-  
-  /* TEXTO GENERAL */
-  p {
+}
+
+/* TEXTO GENERAL */
+p {
     font-size: 20px;
-  }
-  
-  /* NAVIGATION LINKS */
-  ul {
+}
+
+/* NAVIGATION LINKS */
+ul {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  ul li a {
+}
+
+ul li a {
     border-radius: 15px;
     color: var(--blanco);
     font-size: 20px;
@@ -51,162 +56,180 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
-  }
-  
-  ul li a:hover {
+}
+
+ul li a:hover {
     background-color: var(--hover-verde);
     color: var(--blanco);
     transform: scale(1.05);
-  }
-  
-  /* FLIP CARD */
-  .flip-card {
+}
+
+/* FLIP CARD */
+.flip-card {
     background-color: transparent;
     width: 300px;
     height: 200px;
     perspective: 1000px;
     cursor: pointer;
     margin: 1rem;
-  }
-  
-  .flip-card-inner {
+}
+
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
-  
-  .flipped .flip-card-inner {
+}
+
+.flipped .flip-card-inner {
     transform: rotateY(180deg);
-  }
-  
-  .flip-card-front,
-  .flip-card-back {
+}
+
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 1rem;
-  }
-  
-  .flip-card-front {
+}
+
+.flip-card-front {
     background-color: var(--verde-principal);
-  }
-  
-  .flip-card-front img {
+}
+
+.flip-card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-  }
-  
-  .flip-card-back {
+}
+
+.flip-card-back {
     background-color: var(--blanco);
-    color: var(--verde-principal); /* Cambiado de blanco a verde para contraste */
+    color: var(--verde-principal);
+    /* Cambiado de blanco a verde para contraste */
     transform: rotateY(180deg);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-  }
-  
-  /* CONTENEDOR DE TARJETAS */
-  #tarjetas {
+}
+
+/* CONTENEDOR DE TARJETAS */
+#tarjetas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-  }
-  
-  /* NUEVO ESTILO: SECCIONES MISION, VISION Y COMO SURGIO */
-  .contenedor {
-    display: flex; /* Alinea los elementos en fila */
-    justify-content: space-between; /* Espacio entre los cuadros */
-    gap: 1rem; /* Espacio entre los elementos */
-    margin-top: 2rem; /* Espacio superior */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
-  }
-  
-  /* Estilo para cada cuadradito de Misión, Visión, ¿Cómo surgió? */
-  .adn {
-    background-color: var(--blanco); /* Fondo blanco */
-    border: 1px solid var(--verde-principal); /* Borde verde */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 1.5rem; /* Espaciado interno */
-    width: 30%; /* Cada cuadro ocupa 30% del ancho */
-    box-sizing: border-box; /* No incluye el padding en el tamaño total */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: transform 0.3s ease-in-out; /* Transición al pasar el mouse */
-  }
-  
-  .adn:hover {
-    transform: translateY(-5px); /* Efecto hover: levanta el cuadro */
-  }
-  
-  /* Estilos para pantallas pequeñas */
-  @media (max-width: 768px) {
+}
+
+/* NUEVO ESTILO: SECCIONES MISION, VISION Y COMO SURGIO */
+.contenedor {
+    display: flex;
+    /* Alinea los elementos en fila */
+    justify-content: space-between;
+    /* Espacio entre los cuadros */
+    gap: 1rem;
+    /* Espacio entre los elementos */
+    margin-top: 2rem;
+    /* Espacio superior */
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten en pantallas pequeñas */
+    align-items: flex-start;
+    /* Alinea los elementos al inicio del contenedor */
+}
+
+/* Estilo para cada cuadradito de Misión, Visión, ¿Cómo surgió? */
+.adn {
+    background-color: var(--blanco);
+    /* Fondo blanco */
+    border: 1px solid var(--verde-principal);
+    /* Borde verde */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    padding: 1.5rem;
+    /* Espaciado interno */
+    width: 30%;
+    /* Cada cuadro ocupa 30% del ancho */
+    box-sizing: border-box;
+    /* No incluye el padding en el tamaño total */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    transition: transform 0.3s ease-in-out;
+    /* Transición al pasar el mouse */
+}
+
+.adn:hover {
+    transform: translateY(-5px);
+    /* Efecto hover: levanta el cuadro */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
     .contenedor {
-      flex-direction: column; /* En pantallas pequeñas, apilan los cuadros verticalmente */
-      align-items: center; /* Centran los cuadros */
+        flex-direction: column;
+        /* En pantallas pequeñas, apilan los cuadros verticalmente */
+        align-items: center;
+        /* Centran los cuadros */
     }
-  
+
     .adn {
-      width: 90%; /* En pantallas pequeñas, cada cuadro ocupa el 90% del ancho */
-      margin-bottom: 15px; /* Espacio inferior entre los cuadros */
+        width: 90%;
+        /* En pantallas pequeñas, cada cuadro ocupa el 90% del ancho */
+        margin-bottom: 15px;
+        /* Espacio inferior entre los cuadros */
     }
-  }
-  
-  /*EQUIPO*/
-  .equipo {
+}
+
+/*EQUIPO*/
+.equipo {
     text-align: center;
     padding: 2rem;
-  }
-   
-  .miembros {
+}
+
+.miembros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 2rem;
     justify-items: center;
-  }
-  
-  .miembro .foto {
+}
+
+.foto {
     width: 100px;
     height: 100px;
-    background-color: var(--verde-principal);
     border-radius: 50%;
+    overflow: hidden;
+    /* esto recorta la imagen dentro del círculo */
     margin-bottom: 0.5rem;
-  }
-  
-  .miembro p {
-    font-size: 0.9rem;
-    line-height: 1.3;
-  }
-  
-  .destacado .foto {
-    border: 3px solid #007bff; /* azul */
-  }
-  
+}
 
-  /* FOOTER */
-  footer {
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* asegura que la imagen se vea bien */
+}
+
+
+/* FOOTER */
+footer {
     background-color: var(--madera);
     display: flex;
     justify-content: space-between;
     padding: 0.8rem;
-  }
-  
-  footer a {
+}
+
+footer a {
     text-decoration: none;
-  }
-  
-  footer .fa-brands {
+}
+
+footer .fa-brands {
     color: var(--negro);
-  }
-  
-  footer .fa-brands:hover {
+}
+
+footer .fa-brands:hover {
     transform: scale(1.2);
     transition: all 0.3s ease;
-  }
-  
+}
