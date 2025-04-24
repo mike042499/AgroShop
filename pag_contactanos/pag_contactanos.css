@@ -34,7 +34,7 @@ body {
     color: white !important;;
 }
 
-ul {
+.navbar-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -44,10 +44,10 @@ ul {
 }
 
 
-ul li a {
+.navbar-nav li a {
     border-radius: 15px;
     color: var(--blanco);
-    font-size: 20px;
+    font-size: 17px;
     margin: 0.2rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -55,7 +55,7 @@ ul li a {
 }
 
 
-ul li a:hover {
+.navbar-nav li a:hover {
     background-color: var(--hover-verde);
     color: var(--blanco);
     transform: scale(1.05);
