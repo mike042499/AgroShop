@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
 
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
 
 body {
     margin: 0;
@@ -9,30 +17,50 @@ body {
 }
 
 .navbar{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+    padding: 0;
     display: flex;
-    justify-content: right;
-    padding: 1%;
-    margin: 0%;
-    background-color: #546F01;
-    gap: 2%;
 }
 
-.navbar li{
-    list-style-type: none;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+.container-fluid {
+    background-color: #546f01;
 }
 
-.navbar a{
-    padding: auto;
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+ul li a {
+    border-radius: 15px;
+    color: var(--blanco);
+    font-size: 20px;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    font-family: "DM Sans";
-    font-weight: normal;
-    font-size: 1.2rem;
-    color: #ffffff;
+    transition: all 0.3s ease;
 }
+
+
+ul li a:hover {
+    background-color: var(--hover-verde);
+    color: var(--blanco);
+    transform: scale(1.05);
+}
+
 
 
 .contenedor-inicio{
