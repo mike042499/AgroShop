@@ -225,22 +225,26 @@ ul li a:hover {
 
 
 /* FOOTER */
-footer {
-    background-color: var(--madera);
+.footer-pagina{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 0.4rem;
+    background-color: #A88F6B;
+    padding: 1%;
+}
+.contenedor-Agroshop p{
+    margin: 0%;
+    padding: 0%;
 }
 
-footer a {
-    text-decoration: none;
+.redes{
+    display: flex;
+    gap: 1.5rem;
+    padding: 0%;
+    margin: 0%;
 }
 
-footer .fa-brands {
-    color: var(--negro);
-}
-
-footer .fa-brands:hover {
-    transform: scale(1.2);
-    transition: all 0.3s ease;
+.redes li{
+    font-family: "DM sans", sans-serif;
+    list-style-type: none;
 }
