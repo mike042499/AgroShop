@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #D8CABB;
+}
+
+.navbar{
+    padding: 0;
+    display: flex;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+.container-fluid {
+    background-color: #546f01;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbar-nav li a {
+    border-radius: 15px;
+    color: var(--blanco);
+    font-size: 17px;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.navbar-nav li a:hover {
+    background-color: var(--hover-verde);
+    color: var(--blanco);
+    transform: scale(1.05);
+}
+
+
+
+.contenedor-inicio{
+    position: relative;
+    padding: 7%;
+    width: 100%;
+    background-image:url(./images/fondocolor.png) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: auto;
+    background-color: rgba(134, 134, 134, 0.35);
+}
+
+
+.contenedor-inicio::before {
+    content: ""; 
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(134, 134, 134, 0.35);
+    z-index: 2;
+}
+
+
+.contenedor-inicio h1 {
+    position: relative;
+    font-family: "Cormorant";
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: bold;
+    z-index: 2;
+    color: #ffffff;
+    margin: 0%;
+    padding: 0%;
+}
+
+.contenedor-formulario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 7% 7% 0 7%;
+    gap: 3rem;
+}
+
+
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+
+#form h2{
+    margin: 0%;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #181F0D;
+}
+
+
+.formulario-input {
+    width: 100%;
+    padding: 3%;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1.25rem;
+    border-radius: 20px;
+    border-color: #ffffff;
+    box-shadow: none;
+    border: 1px solid white;
+    box-shadow: none;
+    outline: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;  /* Chrome, Safari, Edge */
+    margin: 0;
+}
+
+.footer-formulario{
+    display: flex;
+    justify-content: right;
+    padding: 1rem 0 1rem 0;
+}
+
+#bttnEnviar{
+    cursor: pointer;
+    width: 9.87rem;
+    height: 3.65rem;
+    font-size: 1.25rem;
+    background-color: #A88F6B;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+}
+
+.contenedor-campesino{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.contenedor-campesino img{
+    display: block; 
+    width: 30rem;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.footer-pagina{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #A88F6B;
+    padding: 1%;
+}
+.contenedor-Agroshop p{
+    margin: 0%;
+    padding: 0%;
+}
+
+.redes{
+    display: flex;
+    gap: 1.5rem;
+    padding: 0%;
+    margin: 0%;
+}
+
+.redes li{
+    font-family: "DM sans", sans-serif;
+    list-style-type: none;
+}

@@ -1,1 +1,20 @@
-
+.hola{
+    background-color: #a4bc00;
+    color: white;
+    text-align: center;
+}
+.contenido{
+    text-align: center;
+    font-family: Comorant;
+    font-size: 64;
+    background-color: #a88f6b;
+}
+.form-control{
+    background-color: #d8cabb;
+}
+.registro{
+    text-align: center;
+}
+.btn{
+    background-color: #181f0d;
+}
