@@ -29,7 +29,55 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
 
 /* Header-NavBar */
 
-header {
+.navbar{
+    padding: 0;
+    display: flex;
+    height: 10vh;
+    background-color: #546f01;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+.container-fluid {
+    background-color: #546f01;
+    height: 100%;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbar-nav li a {
+    border-radius: 15px;
+    color: var(--blanco);
+    font-size: 17px;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.navbar-nav li a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* header {
     margin: 0;
     padding: 0;
     height: 10vh;
@@ -42,9 +90,9 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-}
+} */
 
-#navbar {
+/* #navbar {
     margin: 0;
     padding: 0;
     padding-right: 20px;
@@ -71,7 +119,7 @@ header {
 
 #logo img {
     height: 100%;
-}
+} */
 
 /* Product-Detail */
 
