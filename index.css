@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: var(--beige-suave);
+}
+
+.navbar-brand img{
+    width: 120px; /* o el tamaño que quieras */
+    height: 90px; /* o el tamaño que quieras */
+    object-fit: contain; /* para que no se deforme el logo */
+    transition: all 0.3s ease;
+    
+}
+
+.navbar-brand img:hover{
+    transform: scale(1.1);
+}
+
+.card-content h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 32px;
+  }
+p{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+}
+
+
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+
+}
+
+ul li a{
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #a4bc00;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+
+.container-imagen img{
+    width: 100%;
+    display: block;
+    height: auto;
+    opacity: 0.5;
+    padding: 0;
+}
+
+.container-destacados{
+    background-color: #546f01;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.contenedor{
+    background-color: #d8cabb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*padding: 100px; /*se coloco para ajustar tarjetas*/
+    gap: 6rem;
+    padding: 80px;
+    
+    
+}
+
+.card{
+    width: 30%;  /*Esto da 3 por fila en desktop */
+    min-width: 250px;
+    max-width: 300px;
+    margin: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #a4bc00; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03); /* efecto "levantado" y ampliado */
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25); /* sombra más fuerte */
+  }
+.card-image{
+    border-radius: 15px 15px 0 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    height: 200px; /* Altura fija para que todas las imágenes ocupen el mismo espacio */
+    overflow: hidden; /* Evita que la imagen sobresalga si es más grande */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+  }
+
+.card-content{
+    background-color: #a4bc00;
+    border-radius: 0 0 15px 15px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0 0 0 0.5rem;
+
+    
+   
+}
+  
+.card-content h2{
+    margin-bottom: 0rem;
+}
+
+.card-content p{
+    margin-top: 0rem;
+}
+
+.card-content span{
+    font-size: 20px;
+
+}
+
+footer{
+    background-color: #a88f6b;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer .fa-brands{
+    color: #000000
+}
+
+footer .fa-brands:hover{
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+
+  
+
+
+
