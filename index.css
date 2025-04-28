@@ -1,10 +1,28 @@
 
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: var(--beige-suave);
+}
 
 header{
+    align-items: center;
     display: flex;
     justify-content: space-between;
     background-color: #546f01;
 }
+
 h2 {
     font-family: 'DM Sans', sans-serif;
     font-size: 32px;
@@ -13,6 +31,25 @@ p{
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
 }
+
+header .logo{
+
+    display: flex;
+    align-items: center;
+}    
+
+.logo img{
+    width: 120px; /* o el tamaño que quieras */
+    height: 90px; /* o el tamaño que quieras */
+    object-fit: contain; /* para que no se deforme el logo */
+    transition: all 0.3s ease;
+    
+}
+
+.logo img:hover{
+    transform: scale(1.1);
+}
+
 
 ul{
     display: flex;
@@ -37,7 +74,7 @@ ul li a:hover {
     background-color: #a4bc00;
     color: #ffffff;
     transform: scale(1.05);
-  }
+}
 
 
 .container-imagen img{
@@ -60,12 +97,15 @@ ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    /*padding: 100px; /*se coloco para ajustar tarjetas*/
+    gap: 6rem;
+    padding: 80px;
+    
     
 }
 
 .card{
-    width: 30%; /* Esto da 3 por fila en desktop */
+    width: 30%;  /*Esto da 3 por fila en desktop */
     min-width: 250px;
     max-width: 300px;
     margin: 2rem;
@@ -142,5 +182,9 @@ footer .fa-brands:hover{
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
+
+
+  
+
 
 
