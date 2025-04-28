@@ -1,4 +1,20 @@
 
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: var(--beige-suave);
+}
 
 header{
     align-items: center;
@@ -58,7 +74,7 @@ ul li a:hover {
     background-color: #a4bc00;
     color: #ffffff;
     transform: scale(1.05);
-  }
+}
 
 
 .container-imagen img{
