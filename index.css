@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
 
 :root {
     --verde-principal: #546f01;
@@ -16,14 +19,19 @@ body {
     background-color: var(--beige-suave);
 }
 
-header{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    background-color: #546f01;
+.navbar-brand img{
+    width: 120px; /* o el tamaño que quieras */
+    height: 90px; /* o el tamaño que quieras */
+    object-fit: contain; /* para que no se deforme el logo */
+    transition: all 0.3s ease;
+    
 }
 
-h2 {
+.navbar-brand img:hover{
+    transform: scale(1.1);
+}
+
+.card-content h2 {
     font-family: 'DM Sans', sans-serif;
     font-size: 32px;
   }
@@ -32,23 +40,6 @@ p{
     font-size: 20px;
 }
 
-header .logo{
-
-    display: flex;
-    align-items: center;
-}    
-
-.logo img{
-    width: 120px; /* o el tamaño que quieras */
-    height: 90px; /* o el tamaño que quieras */
-    object-fit: contain; /* para que no se deforme el logo */
-    transition: all 0.3s ease;
-    
-}
-
-.logo img:hover{
-    transform: scale(1.1);
-}
 
 
 ul{
@@ -92,7 +83,7 @@ ul li a:hover {
     color: white;
 }
 
-.container{
+.contenedor{
     background-color: #d8cabb;
     display: flex;
     flex-wrap: wrap;
