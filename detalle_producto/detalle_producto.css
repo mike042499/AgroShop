@@ -77,50 +77,6 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
     transform: scale(1.05);
 }
 
-/* header {
-    margin: 0;
-    padding: 0;
-    height: 10vh;
-    background-color: var(--primary-color);
-}
-
-#header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-} */
-
-/* #navbar {
-    margin: 0;
-    padding: 0;
-    padding-right: 20px;
-    display: flex;
-    list-style: none;
-    color: aliceblue;
-}
-
-#navbar li {
-    margin-left: 30px;
-}
-
-#navbar a {
-    text-decoration: none;
-    color: aliceblue;
-    font-size: 20px;
-}
-
-#logo {
-    margin: 0;
-    margin-left: 20px;
-    height: 100%;
-}
-
-#logo img {
-    height: 100%;
-} */
-
 /* Product-Detail */
 
 /* Background */
