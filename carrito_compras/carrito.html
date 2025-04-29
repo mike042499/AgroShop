@@ -42,8 +42,8 @@
         <h1>MI COMPRA</h1>
     </section>
 
-    <main id="shoppingCart-container">
-       <section class="shopping-list">
+    <main>
+       <section class="shopping-list" id="shopping-list">
             <p class="list-title">Producto</p>
             <p class="list-title">Precio / Libra</p>
             <p class="list-title">Cantidad (lbs)</p>
@@ -73,10 +73,43 @@
             </p>
        </section>
        <section class="buy-overview">
-            <div class="payment-options"></div>
-            <div></div>
+            <div class="payment-options">
+                <p>Métodos de pago</p>
+            </div>
+            <div class="payment-container">
+                <div class="payment-information">
+                    <p>Sub-total:</p>
+                    <p id="sub-total">10500<span>$</span></p>
+                    <p id="shipping-text">Envío:</p>
+                    <p id="shipping-cost">1000<span>$</span></p>
+                </div>
+                <div class="payment-final">
+                    <p id="total-text">Total:</p>
+                    <button id="total-cost">15000 <span>$</span></button>
+                </div>
+            </div>
+            
        </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <h4>AgroShop ©</h4>
+        <section id="social-media">
+            <p>Nuestras Redes:</p>
+            <ul>
+                <li><a href="https://github.com/mike042499/AgroShop">
+                    <img src="../img/Github.svg" alt="Logo Github">
+                </a></li>
+                <li><a href="">
+                    <img src="../img/Instagram.svg" alt="Logo Instagram">
+                </a></li>
+                <li><a href="">
+                    <img src="../img/Facebook.svg" alt="Logo Facebook">
+                </a></li>
+            </ul>
+        </section>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
