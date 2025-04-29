@@ -77,6 +77,10 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
     transform: scale(1.05);
 }
 
+.navbar-collapse {
+    background-color: #546f01;
+}
+
 /* Product-Detail */
 
 /* Background */

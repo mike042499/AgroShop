@@ -77,6 +77,16 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
     transform: scale(1.05);
 }
 
+.navbar-collapse {
+    background-color: var(--primary-color);
+    z-index: 1000;
+    width: 100vw;
+}
+
+#navbarSupportedContent {
+    width: 100vw;
+}
+
 /* BANNER */
 
 #banner {
