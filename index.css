@@ -154,6 +154,54 @@ ul li a:hover {
 
 }
 
+  .section-contenedor-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* CENTRA los elementos cuando hay menos de 3 por fila */
+    gap: 16px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 16px;
+  }
+  
+  .contenedor-filtros {
+    flex: 1 1 300px; /* hace que ocupen mínimo 300px y se ajusten */
+    max-width: 300px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 5px;
+  }
+  
+  
+  .card-imagen-filtros img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .contenedor-filtros-imagenes {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+    
+  }
+  
+  .contenedor-filtros-imagenes img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  
+
+
 footer{
     background-color: #a88f6b;
     display: flex;
