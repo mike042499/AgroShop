@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #D8CABB;
+}
+
+
+#crear-producto h1{
+    font-family: "Cormorant";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: bold;
+}
+
+#crear-producto{
+    margin: 5%;
+    padding: 5%;
+    background-color: #a88f6b;
+    border-radius: 50px;
+
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8% 10% 10% 10%;
+    gap:1rem;
+}
+
+.formulario h2{
+    margin: 0%;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #181F0D;
+}
+
+.formulario-input{
+    padding: 2%;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+}
+
+
+
+.formulario button{
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 2%;
+    border-radius: 20px;
+    border: none;
+}
+
+#productos{
+    padding: 0% 10% 10% 10%;
+    background-color: transparent;
+}
+#productos h1{
+    padding: 0 0 5% 0;
+    font-family: "Cormorant";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: bold;
+}
+.table {
+    background-color: transparent !important;
+}
+
+.table th,
+.table td {
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1rem;
+    background-color: transparent !important;
+}
