@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* TITULOS */
+h2,
+h3,
+h4,
+h5 {
+    font-size: 32px;
+    text-align: center;
+}
+
+/* TEXTO GENERAL */
+p {
+    font-size: 20px;
+}
+
 .hola{
     background-color: #a4bc00;
     color: white;

@@ -10,10 +10,31 @@
     --negro: #000000;
 }
 
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #D8CABB;
+}
+
+/* TEXTO GENERAL */
+p {
+    font-size: 20px;
+}
+
+.navbar-brand img{
+    width: 120px; /* o el tamaño que quieras */
+    height: 90px; /* o el tamaño que quieras */
+    object-fit: contain; /* para que no se deforme el logo */
+    transition: all 0.3s ease;
+    
+}
+
+.navbar-brand img:hover{
+    transform: scale(1.1);
 }
 
 .navbar{
@@ -47,7 +68,7 @@ body {
 .navbar-nav li a {
     border-radius: 15px;
     color: var(--blanco);
-    font-size: 17px;
+    font-size: 20px;
     margin: 0.2rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
