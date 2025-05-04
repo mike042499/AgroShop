@@ -90,7 +90,7 @@ form button:hover{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #a4bc00; 
+    border: 1px solid var(--beige-suave); 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -130,6 +130,7 @@ form button:hover{
   
 .card-content h2{
     margin-bottom: 0rem;
+    text-align: left;
 }
 
 .card-content p{

@@ -33,23 +33,32 @@ body {
 .card-content h2 {
     font-family: 'DM Sans', sans-serif;
     font-size: 32px;
+    text-align: left;
   }
 p{
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
 }
 
+.card-content p:nth-of-type(2) {
+    font-size: 15px;
+}
+
+
+  video {
+    display: block;
+    object-fit: cover;
+  }
 
 
 
-
-.container-imagen img{
+/*.container-imagen img{
     width: 100%;
     display: block;
     height: auto;
     opacity: 0.5;
     padding: 0;
-}
+}*/
 
 .container-destacados{
     background-color: #546f01;
@@ -65,7 +74,7 @@ p{
     justify-content: center;
     /*padding: 100px; /*se coloco para ajustar tarjetas*/
     gap: 6rem;
-    padding: 80px;
+    /*padding: 80px;*/
     
     
 }
@@ -78,7 +87,7 @@ p{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #a4bc00; 
+    border: 1px solid var(--beige-suave); 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -122,6 +131,7 @@ p{
 
 .card-content p{
     margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 .card-content span{
@@ -134,11 +144,12 @@ p{
     flex-wrap: wrap;
     justify-content: center; /* CENTRA los elementos cuando hay menos de 3 por fila */
     gap: 16px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     padding: 16px;
+    margin-bottom: 2rem;
   }
-  
+
   .contenedor-filtros {
     flex: 1 1 300px; /* hace que ocupen mínimo 300px y se ajusten */
     max-width: 300px;
@@ -147,16 +158,24 @@ p{
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-    margin: 0 5px;
+    margin: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contenedor-filtros:hover {
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25); 
   }
   
   
   .card-imagen-filtros img {
     width: 100%;
-    height: auto;
+    height: 250px;
     max-width: 300px;
     border-radius: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
   }
   
   .contenedor-filtros-imagenes {
@@ -165,14 +184,21 @@ p{
     gap: 8px;
     width: 100%;
     max-width: 300px;
-    
   }
   
   .contenedor-filtros-imagenes img {
     width: 30%;
     height: auto;
     border-radius: 8px;
+    border: 2px solid var(--beige-suave);
+    cursor: pointer;
     object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contenedor-filtros-imagenes img:hover{
+    transform: translateY(-2px) scale(1.03); 
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25); 
   }
   
 
