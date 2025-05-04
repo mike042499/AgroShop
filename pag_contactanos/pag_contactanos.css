@@ -20,11 +20,13 @@ body {
     background-color: #D8CABB;
 }
 
-
+/* TEXTO GENERAL */
+p {
+    font-size: 20px;
+}
 
 .navbar-brand img{
-    width: 120px; /* o el tamaño que quieras */
-    height: 90px; /* o el tamaño que quieras */
+    width: 60px; /* o el tamaño que quieras */
     object-fit: contain; /* para que no se deforme el logo */
     transition: all 0.3s ease;
     
@@ -45,6 +47,7 @@ body {
   
 .container-fluid {
     background-color: #546f01;
+    height: 50px;
 }
 
 .navbar .nav-link,
@@ -65,7 +68,7 @@ body {
 .navbar-nav li a {
     border-radius: 15px;
     color: var(--blanco);
-    font-size: 20px;
+    font-size: 1rem;
     margin: 0.2rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -108,7 +111,7 @@ body {
 .contenedor-inicio h1 {
     position: relative;
     font-family: "Cormorant";
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: 4rem;
     font-style: normal;
     font-weight: bold;
     z-index: 2;
@@ -120,10 +123,11 @@ body {
 .contenedor-formulario {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     padding: 7% 7% 0 7%;
+    gap: 3rem;
 }
 
 
@@ -159,14 +163,11 @@ body {
 }
 
 input[type=number] {
-    -moz-appearance: textfield; /* Firefox antiguos */
-    -webkit-appearance: none;   /* Chrome, Safari antiguos */
-    appearance: textfield;      /* Estándar moderno */
+    -moz-appearance: textfield; /* Firefox */
 }
-/* Quitar las flechitas en Chrome, Safari y Edge */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    -webkit-appearance: none;  /* Chrome, Safari, Edge */
     margin: 0;
 }
 
@@ -190,25 +191,23 @@ input[type=number]::-webkit-outer-spin-button {
 .contenedor-campesino{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
-    height: 100%;
     margin: 0%;
     padding: 0%;
 }
 
 .contenedor-campesino img{
+    display: block; 
     width: 30rem;
     height: auto;
     max-width: 100%;
     max-height: 100%;
     padding: 0%;
     margin: 0%;
-    margin-bottom: 0;
 }
 
 .footer-pagina{
-    margin-top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -222,19 +221,35 @@ input[type=number]::-webkit-outer-spin-button {
 
 .redes{
     display: flex;
-    gap: 1.5rem;
     padding: 0%;
     margin: 0%;
+}
+
+#redesTitulo{
+    list-style-type: none;
+
 }
 
 .redes li{
     font-family: "DM sans", sans-serif;
     list-style-type: none;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.redes li a{
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 
-@media (max-width: 768px) {
-    .contenedor-formulario {
-      flex-direction: column;
-    }
+.redes li a:hover{
+    background-color: var(--hover-verde);
+    color: var(--blanco);
+    transform: scale(1.05);
 }
