@@ -324,27 +324,88 @@ footer h4 {
 }
 
 @media (max-width: 768px){
+    /* Banner */
+    #banner {
+        height: 70px;
+    }
+
+    #banner h1 {
+        font-size: 28px;
+        text-align: end;
+    }
+
+    /* Shopping-List */
     .list-title {
         display: none;
     }
 
     .shopping-list {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr;
         gap: 0;
+        margin: 20px 10vw;
+        min-width: 20vw;
+        justify-content: start;
+    }
+
+    .shopping-list p {
+        font-size: 18px;
+        padding-left: 50px;
+    }
+    
+    .product-list {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .product-list h4 {
+        margin: 5px 0;
+        padding-left: 50px;
+    }
+
+    .product-list p {
+        position: relative;
+    }
+
+    .product-list img {
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 15px;
     }
 
     .product-name {
         align-items: flex-start;
     }
-
+    
     .product-total {
         margin-bottom: 20px;
+        border-radius: 0 0 20px 20px;
+        padding: 5px 0;
     }
 
     .product-count::before {
         content: "Cantidad: ";
         display: block;
         margin-right: 20px;
+    }
+
+    .product-cost::before {
+        content: "Precio / lb: ";
+        display: block;
+        margin-right: 20px;
+    }
+
+    .product-total::before {
+        content: "Total: ";
+        font-weight: 400;
+        display: block;
+        margin-right: 20px;
+    }
+
+    .delete-item {
+        position: absolute;
+        align-items: center;
+        right: -20px;
+        margin-bottom: 90px;
     }
 }
