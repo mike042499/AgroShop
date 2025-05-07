@@ -22,9 +22,17 @@ body {
 
 
 
+.navbar-brand{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    height: 50px;
+    margin: 0%;
+    padding: 0%;
+}
 .navbar-brand img{
-    width: 120px; /* o el tamaño que quieras */
-    height: 90px; /* o el tamaño que quieras */
+    max-width: 100%;
+    max-height: 100%; /* o el tamaño que quieras */
     object-fit: contain; /* para que no se deforme el logo */
     transition: all 0.3s ease;
     
@@ -65,9 +73,7 @@ body {
 .navbar-nav li a {
     border-radius: 15px;
     color: var(--blanco);
-    font-size: 20px;
-    margin: 0.2rem;
-    padding: 0.5rem 1rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -222,14 +228,37 @@ input[type=number]::-webkit-outer-spin-button {
 
 .redes{
     display: flex;
-    gap: 1.5rem;
     padding: 0%;
     margin: 0%;
+}
+
+#redesTitulo{
+    list-style-type: none;
+
 }
 
 .redes li{
     font-family: "DM sans", sans-serif;
     list-style-type: none;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.redes li a{
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.redes li a:hover{
+    background-color: var(--hover-verde);
+    color: var(--blanco);
+    transform: scale(1.05);
 }
 
 

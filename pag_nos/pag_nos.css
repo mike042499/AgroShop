@@ -15,13 +15,45 @@
 }
 
 body {
-    background-color: var(--beige-suave);
+    margin: 0;
+    padding: 0;
+    background-color: #D8CABB;
 }
 
+h2,
+h4,
+h5 {
+    font-size: 32px;
+    text-align: center;
+}
+
+h3{
+    padding: 2%;
+    font-family: "Cormorant";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/* TEXTO GENERAL */
+p {
+    font-size: 20px;
+}
+.navbar-brand{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    height: 50px;
+    margin: 0%;
+    padding: 0%;
+}
 .navbar-brand img{
-    width: 120px; /* o el tamaño que quieras */
-    height: 90px; /* o el tamaño que quieras */
-    object-fit: contain; /* para que no se deforme el logo */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
     transition: all 0.3s ease;
     
 }
@@ -30,45 +62,33 @@ body {
     transform: scale(1.1);
 }
 
-/*NAVBAR*/
 .navbar{
     padding: 0;
     display: flex;
 }
 
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
   
-.container-fluid {
+  .container-fluid {
     background-color: #546f01;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
     color: white !important;;
+    
 }
 
-.navbar-nav li a {
-    font-size: 20px;
+.navbar-nav .nav-link {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
-/* TITULOS */
-h2,
-h3,
-h4,
-h5 {
-    font-size: 32px;
-    text-align: center;
-}
 
-/* TEXTO GENERAL */
-p {
-    font-size: 20px;
-}
-
-/* NAVIGATION LINKS */
-ul {
+.navbar-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -77,21 +97,24 @@ ul {
     margin: 0;
 }
 
-ul li a {
+
+.navbar-nav li a {
     border-radius: 15px;
     color: var(--blanco);
-    font-size: 20px;
-    margin: 0.2rem;
-    padding: 0.5rem 1rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-ul li a:hover {
+
+.navbar-nav li a:hover {
     background-color: var(--hover-verde);
     color: var(--blanco);
     transform: scale(1.05);
 }
+
+
+
 
 /* FLIP CARD */
 .flip-card {
@@ -161,8 +184,8 @@ ul li a:hover {
     justify-content: space-between;
     /* Espacio entre los cuadros */
     gap: 1rem;
+    padding: 3%;
     /* Espacio entre los elementos */
-    margin-top: 2rem;
     /* Espacio superior */
     flex-wrap: wrap;
     /* Permite que los elementos se ajusten en pantallas pequeñas */
@@ -258,12 +281,35 @@ ul li a:hover {
 
 .redes{
     display: flex;
-    gap: 1.5rem;
     padding: 0%;
     margin: 0%;
+}
+
+#redesTitulo{
+    list-style-type: none;
+
 }
 
 .redes li{
     font-family: "DM sans", sans-serif;
     list-style-type: none;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.redes li a{
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.redes li a:hover{
+    background-color: var(--hover-verde);
+    color: var(--blanco);
+    transform: scale(1.05);
 }
