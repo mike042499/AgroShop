@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+:root {
+    --verde-principal: #546f01;
+    --hover-verde: #a4bc00;
+    --beige-suave: #d8cabb;
+    --madera: #a88f6b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.error{
+    color: red;
+}
+
+
+.login{
+    display: flex;
+    flex-direction: row;
+}
+
+.banner-contenedor{
+    position: relative;
+    max-width: 100%;
+}
+
+.banner-contenedor::before{
+    content: ""; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(134, 134, 134, 0.35);
+    z-index: 2;
+
+}
+
+.banner-contenedor img{
+    max-width: 100%;
+}
+.login-contenedor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-contenedor h1{
+    font-family: "Conmorant";
+    font-style: normal;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.contenido{
+    width: 30rem;
+    background-color: #a88f6b;
+    border-radius: 30px;
+}
+
+.header-login h2{
+    display: flex;
+    justify-content: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.2rem;
+    padding: 2rem 1rem 1rem 1rem;
+    margin: 0%;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 2rem 2rem 2rem;
+    margin: 0%;
+    gap: 0.5rem;
+}
+
+.login-form label{
+    font-family: "DM Sans", sans-serif;
+    margin: 0%;
+ }
+
+.login-form a{
+    font-family: "DM Sans", sans-serif;
+    color: #ffffff;
+ }
+.form-control{
+    border: none;
+    background-color: #d8cabb;
+    border: 20px;
+}
+.registro{
+    text-align: center;
+    padding: 1rem;
+}
+.btn{
+    background-color: #181f0d;
+    border: none;
+}
+
+.btn:hover{
+    background-color: var(--verde-principal) ;
+}
+.registro a{
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #181f0d;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.registro a:hover{
+    background-color: var(--verde-principal);
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;  /* Chrome, Safari, Edge */
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .login {
+        flex-direction: column;
+    }
+
+    .banner-contenedor,
+    .login-contenedor {
+        width: 100%;
+    }
+
+    .banner-contenedor {
+        height: 200px;
+    }
+
+    .banner-contenedor img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .contenido {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-login h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-contenedor h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .contenido {
+        border-radius: 20px;
+        padding: 1rem;
+    }
+
+    .form-control,
+    .btn {
+        font-size: 0.95rem;
+    }
+
+    .registro a {
+        font-size: 0.9rem;
+    }
+}
