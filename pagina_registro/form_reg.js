@@ -117,6 +117,7 @@ function validarComparacion(contraseña,validacion){
     return true;
 }
 
+
 function limpiarFormulario(){
     document.getElementById("nombre").value="";
     document.getElementById("email").value="";
