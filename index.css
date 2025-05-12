@@ -20,8 +20,7 @@ body {
 }
 
 .navbar-brand img{
-    width: 120px; /* o el tamaño que quieras */
-    height: 90px; /* o el tamaño que quieras */
+    width: 60px; /* o el tamaño que quieras */ /* o el tamaño que quieras */
     object-fit: contain; /* para que no se deforme el logo */
     transition: all 0.3s ease;
     
@@ -42,30 +41,6 @@ p{
 
 
 
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    list-style: none;
-
-}
-
-ul li a{
-    border-radius: 15px;
-    color: #ffffff;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    margin: 0.2rem;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-ul li a:hover {
-    background-color: #a4bc00;
-    color: #ffffff;
-    transform: scale(1.05);
-}
 
 
 .container-imagen img{
@@ -152,26 +127,6 @@ ul li a:hover {
 .card-content span{
     font-size: 20px;
 
-}
-
-footer{
-    background-color: #a88f6b;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8rem;
-}
-
-footer a{
-    text-decoration: none;
-}
-
-footer .fa-brands{
-    color: #000000
-}
-
-footer .fa-brands:hover{
-  transform: scale(1.2);
-  transition: all 0.3s ease;
 }
 
 
