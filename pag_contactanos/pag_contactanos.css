@@ -20,7 +20,10 @@ body {
     background-color: #D8CABB;
 }
 
-
+/* TEXTO GENERAL */
+p {
+    font-size: 20px;
+}
 
 .navbar-brand{
     max-width: 100%;
@@ -259,11 +262,5 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: var(--hover-verde);
     color: var(--blanco);
     transform: scale(1.05);
-}
-
-
-@media (max-width: 768px) {
-    .contenedor-formulario {
-      flex-direction: column;
-    }
+>>>>>>>>> Temporary merge branch 2
 }
