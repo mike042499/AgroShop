@@ -515,6 +515,10 @@ footer h4 {
 }
 
 @media (max-width: 560px){
+    #product-image {
+        margin: 0;
+    }
+
     #product-text h1 {
         font-size: 36px;
     }
@@ -525,6 +529,10 @@ footer h4 {
 
     #product-cost h3 {
         font-size: 24px;
+    }
+
+    #product-text {
+        margin: 100px 5vw 50px 5vw;
     }
 
     #product-text p {
