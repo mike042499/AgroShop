@@ -11,6 +11,7 @@ document.querySelector(".formulario").addEventListener("submit", function(event)
 
     
     const nombre = document.getElementById("nombreProducto").value;
+    const desc = document.getElementById('descripcionProducto').value
     const precio = document.getElementById("precioProducto").value;
     const imagenInput = document.getElementById("imageUpload");
     const imagen = imagenInput.files[0];
@@ -19,13 +20,14 @@ document.querySelector(".formulario").addEventListener("submit", function(event)
     const producto = {
       id: contador++,
       nombre: nombre,
+      descripcion: desc,
       precio: "$"+precio,
       imagen: imagen ? imagen.name : null
     };
     
     
     listaProductos.push(producto);
-    // console.log(JSON.stringify(listaProductos, null, 2));
+    console.log(JSON.stringify(listaProductos, null, 2));
     localStorage.setItem("KeyLista",JSON.stringify(listaProductos));
 
   });

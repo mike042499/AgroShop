@@ -48,7 +48,14 @@ body {
     border-radius: 20px;
 }
 
-
+.formulario textarea{
+        padding: 2%;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+}
 
 .formulario button{
     font-family: "DM Sans";
