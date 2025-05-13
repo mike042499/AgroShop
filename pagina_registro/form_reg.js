@@ -1,7 +1,19 @@
 const listaUsuarios = JSON.parse(localStorage.getItem("KeyUsuarios")) || [];
 let contador = listaUsuarios.length;
 
+let animacion;
+
 document.addEventListener("DOMContentLoaded", function() {
+
+    animacion = lottie.loadAnimation({
+    container: document.getElementById('modal-animacion'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: '../animaciones/registro_exitoso.json'
+    });
+
+
     document.getElementById("registroForm").addEventListener("submit", tomar_datos);
 });
 function tomar_datos(event){
@@ -29,7 +41,7 @@ function tomar_datos(event){
         listaUsuarios.push(usuario);
     // console.log(JSON.stringify(listaProductos, null, 2));
         localStorage.setItem("KeyUsuarios",JSON.stringify(listaUsuarios));
-        alert("Registro Exitoso");
+        mostrarModal("Registro exitoso", "black");
         limpiarFormulario();
     }
 }
@@ -125,4 +137,19 @@ function limpiarFormulario(){
     document.getElementById("direccion").value="";
     document.getElementById("password").value="";
     document.getElementById("conf_password").value="";
+}
+
+function mostrarModal(mensaje, color='black'){
+    const modal = document.getElementById('modal-mensaje');
+    const modalTexto = document.getElementById('modal-texto');
+    modal.style.display = 'flex';
+    modalTexto.textContent = mensaje;
+    modalTexto.style.color = color;
+
+    animacion.goToAndPlay(0, true);
+
+    setTimeout(() => {
+        document.getElementById('modal-mensaje').style.display = 'none';
+    }, 3000);
+
 }
