@@ -25,9 +25,6 @@ document.querySelector(".formulario").addEventListener("submit", function(event)
     
     
     listaProductos.push(producto);
-    
-  
-    
     // console.log(JSON.stringify(listaProductos, null, 2));
     localStorage.setItem("KeyLista",JSON.stringify(listaProductos));
 
