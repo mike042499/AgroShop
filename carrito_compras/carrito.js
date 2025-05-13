@@ -1,7 +1,13 @@
 //Variables
 
 let productosCarrito = [];
+let subTotal = 0;
+let envio = 5000;
+let totalFinal = 0;
 const contenedor = document.getElementById("shopping-list");
+const subTotalElement = document.getElementById("sub-total");
+const botonPago = document.getElementById("total-cost");
+const elementoEnvio = document.getElementById("shipping-cost");
 
 //Funciones Lista
 
@@ -52,6 +58,13 @@ function crearItem(nombre, precio, imagenRuta){
     const finalCost = (precioNumero * 1);
     productTotal.textContent = finalCost;
 
+    //Actualizacion resumen
+    subTotal += finalCost;
+    subTotalElement.textContent = `${subTotal} $`;
+    totalFinal = subTotal + envio;
+    botonPago.textContent = `${totalFinal} $`;
+    elementoEnvio.textContent = `${envio} $`;
+
     const deleteButton = document.createElement('button');
     deleteButton.classList.add("delete-item");
     deleteButton.textContent = "X";
@@ -63,6 +76,13 @@ function crearItem(nombre, precio, imagenRuta){
         contenedor.removeChild(productCount);
         contenedor.removeChild(productTotal);
         eliminarItem(nombre);
+
+        //Actualizacion resumen
+        subTotal -= finalCost;
+        subTotalElement.textContent = `${subTotal} $`;
+        totalFinal = subTotal + envio;
+        botonPago.textContent = `${totalFinal} $`;
+        elementoEnvio.textContent = `${envio} $`;
     })
 
     productDiv.appendChild(productImage);
@@ -74,7 +94,7 @@ function crearItem(nombre, precio, imagenRuta){
     contenedor.appendChild(productDiv);
     contenedor.appendChild(productCost);
     contenedor.appendChild(productCount);
-    contenedor.appendChild(productTotal);
+    contenedor.appendChild(productTotal);    
 }
 
 function eliminarItem(texto){
@@ -102,3 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarItems();
 })
 
+//A ventana de pago.
+botonPago.addEventListener('click', () => {
+    alert(`Vas a pagar un valor de ${totalFinal} $`)
+})
