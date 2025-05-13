@@ -43,6 +43,7 @@
     margin: 0;
 }
 
+/*color de los mensajes error*/
 .error{
     color: red;
 }
