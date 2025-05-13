@@ -146,10 +146,10 @@ function mostrarModal(mensaje, color='black'){
     modalTexto.textContent = mensaje;
     modalTexto.style.color = color;
 
-animacion.goToAndPlay(0, true);
+    animacion.goToAndPlay(0, true);
 
-setTimeout(() => {
-    document.getElementById('modal-mensaje').style.display = 'none';
-}, 3000);
+    setTimeout(() => {
+        document.getElementById('modal-mensaje').style.display = 'none';
+    }, 3000);
 
 }

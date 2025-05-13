@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="form_ini.css">
     <title>Inicio_sesión</title>
 </head>
+
+
+
 <body>
+   <div id="modal-mensaje">
+      <div id="modal-cuerpo">
+        <div id="modal-animacion"></div>
+        <p id="modal-texto"></p>
+      </div>
+    </div>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-w">
             <div class="container-fluid">
@@ -41,7 +50,7 @@
     <div class="contenido">
         <h1>LOGIN</h1>
         <br>
-        <form action="procesar.php" method="post" id="login">
+        <form id="login">
             <label for="correoUsuario" class="form-label">USUARIO</label>
             <input type="email" class="form-control" id="correoUsuario" placeholder="name@example.com" required>
             <span class="error" id="errorUsuario"></span>
@@ -61,13 +70,14 @@
                 <a href="http://">Olvidaste tu contraseña</a>
             </div>
         </form>
+
+        <div class="registro">
+          <h6>¿No cuentas con un usuario?</h6>
+          <button class="btn btn-primary" type="button"><a href="../pagina_registro/form_re.html">Registrarse</a></button>
+        </div>
     </div>
 
-    <div class="registro">
-        <br><br>
-        <h6>No cuentas con un usuario?</h6>
-        <button class="btn btn-primary" type="button"><a href="../pagina_registro/form_re.html">REGISTARSE</a></button>
-    </div>
+    
 
     
     <footer class="footer-pagina">
@@ -92,5 +102,7 @@
     
     <script src="script_ini.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
+
 </body>
 </html>
