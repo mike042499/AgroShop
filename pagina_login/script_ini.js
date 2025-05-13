@@ -54,6 +54,7 @@ function mostrarErrores(numero){
     }
 }
 
+/* mostrar el modal durante 3 seg y redirigir a inicio*/
 function mostrarModal(mensaje, color='black'){
     const modal = document.getElementById('modal-mensaje');
     const modalTexto = document.getElementById('modal-texto');
