@@ -134,6 +134,21 @@ p{
     margin-bottom: 0rem;
 }
 
+/*estilos de prueba*/
+
+.card-content p:first-of-type {
+    font-size: 16px; /* o el tamaño que prefieras */
+    font-weight: bold; /* opcional, si quieres destacarlo más */
+}
+
+.card-content p:nth-of-type(2) {
+    font-size: 24px; /* o un tamaño menor */
+}
+
+.card-content p:nth-of-type(3) {
+    font-size: 14px; /* o un tamaño menor */
+}
+
 .card-content span{
     font-size: 20px;
 
