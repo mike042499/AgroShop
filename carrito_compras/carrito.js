@@ -20,7 +20,7 @@ function mostrarItems(){
         contenedor.removeChild(contenedor.lastChild)
     }
     for (let i in productosCarrito){
-        crearItem(productosCarrito[i].nombre, productosCarrito[i].precio, productosCarrito[i].imagen)
+        crearItem(productosCarrito[i].nombre, productosCarrito[i].precio, productosCarrito[i].imagen, productosCarrito[i].cantidad)
     }
 }
 
@@ -29,7 +29,7 @@ function leerItems(){
     productosCarrito.push(...objeto)
 }
 
-function crearItem(nombre, precio, imagenRuta){
+function crearItem(nombre, precio, imagenRuta, cantidad){
     const productDiv = document.createElement('div');
     productDiv.classList.add("product-list");
 
@@ -48,14 +48,14 @@ function crearItem(nombre, precio, imagenRuta){
 
     const productCount = document.createElement('p');
     productCount.classList.add("product-count")
-    productCount.textContent = "1";
+    productCount.textContent = cantidad;
 
     const productSpan = document.createElement('span');
     productSpan.textContent = "$";
 
     const productTotal = document.createElement('p');
     productTotal.classList.add("product-total");
-    const finalCost = (precioNumero * 1);
+    const finalCost = (precioNumero * cantidad);
     productTotal.textContent = finalCost;
 
     //Actualizacion resumen
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     .then(respuesta => respuesta.json())
     //     .then(datos => {
     //         productosCarrito = datos.productos;
-    //         // guardarLista(); //Esto se borra
+    //         guardarLista(); //Esto se borra
     //         leerItems();
     //         mostrarItems();
     //     })

@@ -1,6 +1,6 @@
 //Inserción artificial de key
 
-let productSelected = [
+let productSelected = {};
     // {
     //         "id": 1,
     //         "nombre": "Zanahoria",
@@ -8,7 +8,6 @@ let productSelected = [
     //         "imagen": "../img/produc-image.png"
     //         "cantidad": 1
     //     }
-];
 
 let cantidad = 1;
 
@@ -23,29 +22,31 @@ const productAmountElement = document.getElementById("amount");
 const productTotal = document.getElementById("purchase-resume").querySelector('h3');
 const addAmountButton = document.getElementById("mayor-amount");
 const subAmountButton = document.getElementById("minor-amount");
+const shoppingCartButton = document.getElementById("shopping-cart");
 
 //Funciones
 
 function leerProducto(){
     let product = JSON.parse(localStorage.getItem("productoSeleccionado") || []);
+    product = product[0];
     productSelected = product;
-    productSelected[0].cantidad = cantidad;
+    productSelected.cantidad = cantidad;
 
     renderizar();
 }
 
 function renderizar(){
-    let nombreProducto = productSelected[0].nombre;
-    let precioProducto = productSelected[0].precio;
-    let imagenProducto = productSelected[0].imagen;
-    let descripcionProducto = productSelected[0].descripcion;
-    let cantidadProducto = productSelected[0].cantidad = cantidad;
+    let nombreProducto = productSelected.nombre;
+    let precioProducto = productSelected.precio;
+    let imagenProducto = productSelected.imagen;
+    let descripcionProducto = productSelected.descripcion;
+    let cantidadProducto = productSelected.cantidad = cantidad;
     mostrarProducto(nombreProducto, precioProducto, imagenProducto, descripcionProducto, cantidadProducto);
 }
 
 function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
     let precioFloat = parseFloat(precio.replace("$", "").replace("Kg", "").trim());
-    
+
     productNameElement.textContent = nombre;
     productCostElement.textContent = `$ ${precioFloat} / lb`;
 
@@ -66,7 +67,7 @@ function aumentarCantidad(){
         cantidad += 1;
     }
     console.log(cantidad)
-    productSelected[0].cantidad = cantidad;
+    productSelected.cantidad = cantidad;
 }
 
 function disminuirCantidad(){
@@ -74,7 +75,20 @@ function disminuirCantidad(){
         cantidad -= 1;
     }
     console.log(cantidad)
-    productSelected[0].cantidad = cantidad;
+    productSelected.cantidad = cantidad;
+}
+
+function agregarCarrito(){
+    //Leer productos existentes, agregar producto actual y escribir en localstorage
+    if (localStorage.getItem("carrito") !== null){
+        let listaCarrito = JSON.parse(localStorage.getItem("carrito") || []);
+        listaCarrito.push(productSelected);
+        localStorage.setItem("carrito", JSON.stringify(listaCarrito));
+    } else {
+        let carritoVacio = [];
+        carritoVacio.push(productSelected);
+        localStorage.setItem("carrito", JSON.stringify(carritoVacio));
+    }
 }
 
 //Eventos
@@ -87,6 +101,10 @@ addAmountButton.addEventListener('click', () => {
 subAmountButton.addEventListener('click', () => {
     disminuirCantidad();
     renderizar();
+})
+
+shoppingCartButton.addEventListener('click', () => {
+    agregarCarrito();
 })
 
 document.addEventListener('DOMContentLoaded', () => {
