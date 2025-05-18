@@ -10,6 +10,7 @@ let productSelected = {};
     //     }
 
 let cantidad = 1;
+let animacion;
 
 //localStorage.setItem("productoSeleccionado", JSON.stringify(productSelected));
 
@@ -84,11 +85,30 @@ function agregarCarrito(){
         let listaCarrito = JSON.parse(localStorage.getItem("carrito") || []);
         listaCarrito.push(productSelected);
         localStorage.setItem("carrito", JSON.stringify(listaCarrito));
+        mostrarModal("Producto Agregado", "black");
     } else {
         let carritoVacio = [];
         carritoVacio.push(productSelected);
         localStorage.setItem("carrito", JSON.stringify(carritoVacio));
+        mostrarModal("Producto Agregado", "black");
     }
+}
+//Modal
+function mostrarModal(mensaje, color='black', urlDestino){
+    const modal = document.getElementById('modal-mensaje');
+    const modalTexto = document.getElementById('modal-texto');
+    modal.style.display = 'flex';
+    modalTexto.textContent = mensaje;
+    modalTexto.style.color = color;
+
+    animacion.goToAndPlay(0, true);
+
+    setTimeout(() => {
+        document.getElementById('modal-mensaje').style.display = 'none';
+        if (urlDestino) {
+            window.location.href = urlDestino;
+        }
+    }, 3000);
 }
 
 //Eventos
@@ -108,5 +128,15 @@ shoppingCartButton.addEventListener('click', () => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
+    //Funcionalidad
     leerProducto();
+
+    //Modal
+    animacion = lottie.loadAnimation({
+    container: document.getElementById('modal-animacion'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: '../animaciones/producto_agregado.json'
+    });
 })
