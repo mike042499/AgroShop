@@ -113,7 +113,7 @@ const aElement = document.getElementById("purchase-resume").querySelector('a');
 aElement.addEventListener('click', (e) => {
     e.preventDefault();
 
-    mostrarModal("Agregando producto...", "black");
+    mostrarModal("", "black");
 })
 
 //Eventos
