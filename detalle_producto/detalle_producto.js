@@ -85,16 +85,15 @@ function agregarCarrito(){
         let listaCarrito = JSON.parse(localStorage.getItem("carrito") || []);
         listaCarrito.push(productSelected);
         localStorage.setItem("carrito", JSON.stringify(listaCarrito));
-        mostrarModal("Producto Agregado", "black");
     } else {
         let carritoVacio = [];
         carritoVacio.push(productSelected);
         localStorage.setItem("carrito", JSON.stringify(carritoVacio));
-        mostrarModal("Producto Agregado", "black");
     }
 }
+
 //Modal
-function mostrarModal(mensaje, color='black', urlDestino){
+function mostrarModal(mensaje, color='black'){
     const modal = document.getElementById('modal-mensaje');
     const modalTexto = document.getElementById('modal-texto');
     modal.style.display = 'flex';
@@ -105,11 +104,17 @@ function mostrarModal(mensaje, color='black', urlDestino){
 
     setTimeout(() => {
         document.getElementById('modal-mensaje').style.display = 'none';
-        if (urlDestino) {
-            window.location.href = urlDestino;
-        }
-    }, 3000);
+        window.location.href = '../carrito_compras/carrito.html';
+        
+    }, 2500);
 }
+
+const aElement = document.getElementById("purchase-resume").querySelector('a');
+aElement.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    mostrarModal("Agregando producto...", "black");
+})
 
 //Eventos
 
