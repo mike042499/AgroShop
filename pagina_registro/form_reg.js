@@ -153,3 +153,13 @@ function mostrarModal(mensaje, color='black'){
     }, 3000);
 
 }
+
+document.querySelectorAll('.toggle-password').forEach(icon => {
+    icon.addEventListener('click', function () {
+      const input = document.querySelector(this.getAttribute('toggle'));
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      this.classList.toggle('fa-eye');
+      this.classList.toggle('fa-eye-slash');
+    });
+  });

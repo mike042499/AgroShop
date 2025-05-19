@@ -20,6 +20,10 @@ p{
     font-size: 20px;
 }
 
+a{
+    text-decoration: none;;
+}
+
 .navbar-brand img{
     width: 60px; /* o el tamaño que quieras */
     object-fit: contain; /* para que no se deforme el logo */

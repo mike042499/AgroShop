@@ -1,19 +1,22 @@
 let listaProductos = [];
 
+
 function crearCard(nombre, imagen, precio){
 const contenedor = document.getElementById('contenedor-cards');
-    contenedor.innerHTML += ` <div class="card">
-                <div class="card-image">
-                    <img src="${imagen}" alt="Imagen de la card">
+    contenedor.innerHTML += ` 
+              <a href="../detalle_producto/detalle_producto.html">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="${imagen}" alt="Imagen de la card">
+                        </div>
+                        <div class="card-content">
+                            <h2>${precio}</h2>
+                            <p>${nombre}</p>
+                        </div>    
                     </div>
-                    <div class="card-content">
-                        <h2>${precio}</h2>
-                        <p>${nombre}</p>
-                    </div>
-                </div>`
+                </a>`
+
 }
-
-
 
 
 
@@ -42,6 +45,27 @@ local.forEach(element => {
 });
 
 });
+
+
+////Detalle producto
+const contenedor = document.getElementById('contenedor-cards');
+
+contenedor.addEventListener("click", function (event) {
+
+    const card = event.target.closest(".card");
+    if (card) {
+        const detalleProducto = [{
+            precio: card.querySelector(".card-content h2").textContent,
+            nombre: card.querySelector(".card-content p").textContent,
+            imagen: ".../"+card.querySelector(".card-image img").src.split("/AgroShop/").pop(),
+        }];
+        
+
+        console.log(detalleProducto);
+        localStorage.setItem("productoSeleccionado",JSON.stringify(detalleProducto));
+    }
+});
+
 
 // fetch('../productos.json')
 //     .then(response => response.json();
