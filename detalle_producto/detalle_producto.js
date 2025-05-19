@@ -1,18 +1,7 @@
-//Inserción artificial de key
 
 let productSelected = {};
-    // {
-    //         "id": 1,
-    //         "nombre": "Zanahoria",
-    //         "precio": "$3200 Kg",
-    //         "imagen": "../img/produc-image.png"
-    //         "cantidad": 1
-    //     }
-
 let cantidad = 1;
 let animacion;
-
-//localStorage.setItem("productoSeleccionado", JSON.stringify(productSelected));
 
 //Variables
 
