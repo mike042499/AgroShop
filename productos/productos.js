@@ -43,7 +43,7 @@ let local = JSON.parse(localStorage.getItem("KeyLista"))
 console.log(local);
 
 local.forEach(element => {
-    crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio)
+    crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio, element.descripcion)
 });
 
 });
