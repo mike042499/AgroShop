@@ -96,7 +96,7 @@ function mostrarModal(mensaje, color='black'){
 
     setTimeout(() => {
         document.getElementById('modal-mensaje').style.display = 'none';
-        window.location.href = '../carrito_compras/carrito.html';
+        window.location.href = '../productos/productos.html';
         
     }, 2500);
 }
