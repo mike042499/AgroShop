@@ -1,20 +1,22 @@
 let listaProductos = [];
 
 
-function crearCard(nombre, imagen, precio){
+function crearCard(nombre, imagen, precio, descripcion){
 const contenedor = document.getElementById('contenedor-cards');
     contenedor.innerHTML += ` 
-              <a href="../detalle_producto/detalle_producto.html">
+              
                 <div class="card">
+                 <a href="../detalle_producto/detalle_producto.html">
                     <div class="card-image">
                         <img src="${imagen}" alt="Imagen de la card">
                         </div>
                         <div class="card-content">
                             <h2>${precio}</h2>
                             <p>${nombre}</p>
-                        </div>    
-                    </div>
-                </a>`
+                            <p class ="descripcion">${descripcion}</p>
+                        </div>   
+                      </a> 
+                    </div>`
 
 }
 
@@ -30,7 +32,7 @@ fetch('../productos.json')
     let Lista = listaProductos;
     
     Lista.forEach(element => {
-        crearCard(element.nombre, element.imagen, element.precio)
+        crearCard(element.nombre, element.imagen, element.precio, element.descripcion)
     
 });
 })

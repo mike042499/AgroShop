@@ -150,6 +150,7 @@ function mostrarModal(mensaje, color='black'){
 
     setTimeout(() => {
         document.getElementById('modal-mensaje').style.display = 'none';
+        window.location.href = "/pagina_login/form_inicio.html";
     }, 3000);
 
 }
