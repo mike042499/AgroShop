@@ -232,6 +232,23 @@ footer .fa-brands:hover{
     background-color: var(--verde-principal);
 }
 
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--hover-verde);
+    color: white;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 @media (max-width: 600px) {
     .boton-flotante {
       bottom: 4.2rem; /* 20px */

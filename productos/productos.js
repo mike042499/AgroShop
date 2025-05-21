@@ -59,7 +59,8 @@ contenedor.addEventListener("click", function (event) {
         const detalleProducto = [{
             precio: card.querySelector(".card-content h2").textContent,
             nombre: card.querySelector(".card-content p").textContent,
-            imagen: ".../"+card.querySelector(".card-image img").src.split("/AgroShop/").pop(),
+            imagen: "../img/"+card.querySelector(".card-image img").src.split("/img/").pop(),
+            descripcion: card.querySelector(".descripcion").textContent
         }];
         
 
