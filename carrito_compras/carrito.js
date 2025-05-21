@@ -109,15 +109,6 @@ function eliminarItem(texto){
 //Eventos
 
 document.addEventListener('DOMContentLoaded', () => {
-    //Esto probablemente ni va aquí !
-    // fetch('../productos.json')
-    //     .then(respuesta => respuesta.json())
-    //     .then(datos => {
-    //         productosCarrito = datos.productos;
-    //         guardarLista(); //Esto se borra
-    //         leerItems();
-    //         mostrarItems();
-    //     })
     leerItems();
     mostrarItems();
 })

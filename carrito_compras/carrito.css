@@ -13,6 +13,9 @@
 
 html {
     scroll-behavior: smooth;
+    /* Ocultar la barra lateral */
+    overflow: auto;
+    scrollbar-width: none;
 }
 
 body {
@@ -21,6 +24,8 @@ body {
     color: var(--black);
     background-color: var(--background-color);
     font-family: "DM Sans";
+    display: flex;
+    flex-direction: column;
 }
 
 a:visited { /* Elimina el color del enlace al ser clickeado */
@@ -29,25 +34,47 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
 
 /* Header-NavBar */
 
+.navbar-brand{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    height: 50px;
+    margin: 0%;
+    padding: 0%;
+}
+.navbar-brand img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    transition: all 0.3s ease;
+    
+}
+
+.navbar-brand img:hover{
+    transform: scale(1.1);
+}
+
 .navbar{
     padding: 0;
     display: flex;
-    height: 10dvh;
-    background-color: var(--primary-color);
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
   
-.container-fluid {
-    background-color: var(--primary-color);
-    height: 100%;
+  .container-fluid {
+    background-color: #546f01;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-    color: white !important;;
+    color: white !important;; 
+}
+
+.navbar-nav .nav-link {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .navbar-nav {
@@ -59,17 +86,13 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
     margin: 0;
 }
 
-
 .navbar-nav li a {
     border-radius: 15px;
-    color: var(--blanco);
-    font-size: 17px;
-    margin: 0.2rem;
-    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
-
 
 .navbar-nav li a:hover {
     background-color: var(--secondary-color);
@@ -77,14 +100,12 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
     transform: scale(1.05);
 }
 
-.navbar-collapse {
-    background-color: var(--primary-color);
+.navbar-collapse{
     z-index: 1000;
-    width: 100dvw;
 }
 
-#navbarSupportedContent {
-    width: 100dvw;
+.container-fluid {
+    z-index: 1000;
 }
 
 /* BANNER */
@@ -298,40 +319,54 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
 
 /* Footer */
 
-footer {
-    height: 70px;
-    background-color: var(--secondary-color);
+.footer-pagina{
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
+    background-color: #A88F6B;
+    padding: 15px;
+}
+.contenedor-Agroshop p{
+    margin: 0%;
+    padding: 0%;
 }
 
-footer h4 {
-    margin: 0;
-    margin-left: 20px;
-    padding: 0;
-}
-
-#social-media {
+.redes{
     display: flex;
-    align-items: center;
+    padding: 0%;
+    margin: 0%;
 }
 
-#social-media p {
-    margin: 0;
+#redesTitulo{
+    list-style-type: none;
+
 }
 
-#social-media ul {
-    margin: 0;
-    margin-right: 20px;
-    padding: 0;
-    list-style: none;
-    display: flex;
+.redes li{
+    font-family: "DM sans", sans-serif;
+    list-style-type: none;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-#social-media li {
-    margin-left: 20px;
+.redes li a{
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
+
+
+.redes li a:hover{
+    background-color: var(--secondary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Shopping Cart floating button*/
 
 .boton-flotante {
     position: fixed;

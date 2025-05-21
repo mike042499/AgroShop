@@ -8,6 +8,7 @@ let animacion;
 const productNameElement = document.getElementById("product-name");
 const productCostElement = document.getElementById("final-cost");
 const productImgElement = document.getElementById("product-image");
+const originalCostElement = document.getElementById("original-cost");
 const productAmountElement = document.getElementById("amount");
 const productTotal = document.getElementById("purchase-resume").querySelector('h3');
 const addAmountButton = document.getElementById("mayor-amount");
@@ -39,6 +40,8 @@ function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
 
     productNameElement.textContent = nombre;
     productCostElement.textContent = `$ ${precioFloat} / lb`;
+
+    originalCostElement.textContent = `$ ${(precioFloat * 1.15).toFixed(0)} / lb`
 
     const imagenUrl = productImgElement.querySelector('img');
     imagenUrl.src = imagen;
@@ -93,7 +96,7 @@ function mostrarModal(mensaje, color='black'){
 
     setTimeout(() => {
         document.getElementById('modal-mensaje').style.display = 'none';
-        window.location.href = '../carrito_compras/carrito.html';
+        window.location.href = '../productos/productos.html';
         
     }, 2500);
 }
