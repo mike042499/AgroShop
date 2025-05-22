@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="form_reg.css">
     <link rel="stylesheet" href="../pag_nos/pag_nos.css">
@@ -85,13 +86,18 @@
                     <input type="text" id="direccion" class="form-control" placeholder="Tu dirección" required />
                     <span id="errorDireccion" class="error"></span>
 
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" class="form-control" placeholder="*******" required />
+                    <div class="mb-3 position-relative">
+                      <label for="password">Contraseña:</label>
+                      <input type="password" id="password" class="form-control" placeholder="*******" required />
+                      <i class="fa-solid fa-eye toggle-password" toggle="#password"></i>
+                    </div>
                     <span id="errorPassword" class="error"></span>
-
-
-                    <label for="conf_password">Confirmar Contraseña:</label>
-                    <input type="password" id="conf_password" class="form-control" placeholder="*******" required />
+                    
+                    <div class="mb-3 position-relative">
+                      <label for="conf_password">Confirmar Contraseña:</label>
+                      <input type="password" id="conf_password" class="form-control" placeholder="*******" required />
+                      <i class="fa-solid fa-eye toggle-password" toggle="#conf_password"></i>
+                    </div>
                     <span id="errorConfPassword" class="error"></span>
 
 

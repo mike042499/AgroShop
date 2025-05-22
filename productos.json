@@ -4,73 +4,85 @@
             "id": 1,
             "nombre": "Zanahoria",
             "precio": "$3200 Kg",
-            "imagen": "../img/zanahoria-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/zanahoria-removebg-preview.png",
+            "descripcion": "Zanahorias frescas, dulces y crujientes, cosechadas del campo. Ideales para jugos, ensaladas o cocidas al vapor. Aportan sabor, textura y nutrientes en cada preparación saludable."
+          },
+          {
             "id": 2,
             "nombre": "Lechuga",
             "precio": "$2500 Kg",
-            "imagen": "../img/lechuga-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/lechuga-removebg-preview.png",
+            "descripcion": "Lechuga verde recién cortada, con hojas frescas y crocantes. Perfecta para ensaladas frescas, wraps o acompañamientos. Rica en agua, fibras y vitaminas esenciales para tu alimentación diaria."
+          },
+          {
             "id": 3,
             "nombre": "Brócoli",
             "precio": "$6000 Kg",
-            "imagen": "../img/brocoli-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/brocoli-removebg-preview.png",
+            "descripcion": "Brócoli tierno y verde intenso, ideal para saltear, hervir o cocinar al vapor. Muy nutritivo, aporta fibra, hierro y antioxidantes. Una opción versátil para tus recetas saludables y sabrosas."
+          },
+          {
             "id": 4,
             "nombre": "Pimenton",
             "precio": "$4500 Kg",
-            "imagen": "../img/pimenton-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/pimenton-removebg-preview.png",
+            "descripcion": "Pimentones grandes, carnosos y coloridos. Con un sabor suave y dulce, ideales para ensaladas, guisos, pizzas y más. Aportan color, textura y vitaminas a cualquier comida casera."
+          },
+          {
             "id": 5,
             "nombre": "Berenjena",
             "precio": "$4000 Kg",
-            "imagen": "../img/berenjena-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/berenjena-removebg-preview.png",
+            "descripcion": "Berenjenas frescas con piel brillante y pulpa suave. Perfectas para asar, rellenar, freír o preparar en escabeche. Ideales en recetas mediterráneas por su sabor y valor nutritivo."
+          },
+          {
             "id": 6,
             "nombre": "Tomate",
             "precio": "$4100 Kg",
-            "imagen": "../img/tomate-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/tomate-removebg-preview.png",
+            "descripcion": "Tomates jugosos y maduros, cosechados en su punto justo. Ideales para ensaladas, salsas caseras, jugos y mil preparaciones más. Ricos en licopeno y antioxidantes naturales."
+          },
+          {
             "id": 7,
             "nombre": "Arveja",
             "precio": "$3400 Kg",
-            "imagen": "../img/arveja-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/arveja-removebg-preview.png",
+            "descripcion": "Arvejas verdes, tiernas y dulces. Excelentes para sopas, guisos, ensaladas o como guarnición. Son fuente de proteína vegetal, fibra y minerales esenciales."
+          },
+          {
             "id": 8,
             "nombre": "Garbanzo",
             "precio": "$9000 Kg",
-            "imagen": "../img/garbanzo-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/garbanzo-removebg-preview.png",
+            "descripcion": "Garbanzo seco de alta calidad, ideal para hummus, ensaladas, guisos y sopas. Rico en proteínas, fibra y hierro. Un ingrediente esencial en la cocina saludable y vegetariana."
+          },
+          {
             "id": 9,
             "nombre": "Fresa",
             "precio": "$3400 Kg",
-            "imagen": "../img/fresas-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/fresas-removebg-preview.png",
+            "descripcion": "Fresas dulces, jugosas y aromáticas. Perfectas para postres, jugos, mermeladas o para consumir frescas. Ricas en vitamina C y antioxidantes naturales."
+          },
+          {
             "id": 10,
             "nombre": "Mora",
             "precio": "$5000 Kg",
-            "imagen": "../img/mora-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/mora-removebg-preview.png",
+            "descripcion": "Moras silvestres con sabor vibrante y un toque ácido. Ideales para jugos, mermeladas, postres y tartas. Aportan antioxidantes y sabor a tus recetas dulces."
+          },
+          {
             "id": 11,
             "nombre": "Piña",
             "precio": "$3000 Kg",
-            "imagen": "../img/piña-removebg-preview.png"
-        },
-        {
+            "imagen": "../img/piña-removebg-preview.png",
+            "descripcion": "Piña tropical fresca, jugosa y aromática. Excelente para jugos, ensaladas de frutas, postres o snacks naturales. Rica en vitamina C y propiedades digestivas."
+          },
+          {
             "id": 12,
             "nombre": "Lulo",
             "precio": "$5200 Kg",
-            "imagen": "../img/lulo-removebg-preview.png"
-        }
+            "imagen": "../img/lulo-removebg-preview.png",
+            "descripcion": "Fruta exótica y refrescante con sabor ácido. Ideal para jugos naturales, cócteles o postres. El lulo es reconocido por su aroma único y beneficios digestivos."
+          }
     ]
 }

@@ -33,6 +33,7 @@ body {
 .card-content h2 {
     font-family: 'DM Sans', sans-serif;
     font-size: 32px;
+    text-align: left;
   }
 p{
     font-family: 'DM Sans', sans-serif;
@@ -40,16 +41,26 @@ p{
 }
 
 
+.card-content p:nth-of-type(2) {
+    font-size: 15px;
+}
+
+
+  video {
+    display: block;
+    object-fit: cover;
+    object-position: top;
+  }
 
 
 
-.container-imagen img{
+/*.container-imagen img{
     width: 100%;
     display: block;
     height: auto;
     opacity: 0.5;
     padding: 0;
-}
+}*/
 
 .container-destacados{
     background-color: #546f01;
@@ -65,7 +76,7 @@ p{
     justify-content: center;
     /*padding: 100px; /*se coloco para ajustar tarjetas*/
     gap: 6rem;
-    padding: 80px;
+    /*padding: 80px;*/
     
     
 }
@@ -78,7 +89,7 @@ p{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #a4bc00; 
+    border: 1px solid var(--beige-suave); 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -122,12 +133,163 @@ p{
 
 .card-content p{
     margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+/*estilos de prueba*/
+
+.card-content p:first-of-type {
+    font-size: 16px; /* o el tamaño que prefieras */
+    font-weight: bold; /* opcional, si quieres destacarlo más */
+}
+
+.card-content p:nth-of-type(2) {
+    font-size: 24px; /* o un tamaño menor */
+}
+
+.card-content p:nth-of-type(3) {
+    font-size: 14px; /* o un tamaño menor */
 }
 
 .card-content span{
     font-size: 20px;
 
 }
+
+.section-contenedor-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* CENTRA los elementos cuando hay menos de 3 por fila */
+    gap: 16px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .contenedor-filtros {
+    flex: 1 1 300px; /* hace que ocupen mínimo 300px y se ajusten */
+    max-width: 300px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contenedor-filtros:hover {
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25); 
+  }
+  
+  
+  .card-imagen-filtros img {
+    width: 100%;
+    height: 250px;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .contenedor-filtros-imagenes {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .contenedor-filtros-imagenes img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--beige-suave);
+    cursor: pointer;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contenedor-filtros-imagenes img:hover{
+    transform: translateY(-2px) scale(1.03); 
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25); 
+  }
+  
+
+
+footer{
+    background-color: #a88f6b;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer .fa-brands{
+    color: #000000
+}
+
+footer .fa-brands:hover{
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.boton-flotante {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: var(--hover-verde);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+  
+.boton-flotante:hover {
+    background-color: var(--verde-principal);
+}
+
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--hover-verde);
+    color: white;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+    .boton-flotante {
+      bottom: 4.2rem; /* 20px */
+      right: 0.2rem;     /* 16px */
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+  }
 
 
   

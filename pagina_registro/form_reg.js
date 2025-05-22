@@ -146,10 +146,21 @@ function mostrarModal(mensaje, color='black'){
     modalTexto.textContent = mensaje;
     modalTexto.style.color = color;
 
-animacion.goToAndPlay(0, true);
+    animacion.goToAndPlay(0, true);
 
-setTimeout(() => {
-    document.getElementById('modal-mensaje').style.display = 'none';
-}, 3000);
+    setTimeout(() => {
+        document.getElementById('modal-mensaje').style.display = 'none';
+        window.location.href = "/pagina_login/form_inicio.html";
+    }, 3000);
 
 }
+
+document.querySelectorAll('.toggle-password').forEach(icon => {
+    icon.addEventListener('click', function () {
+      const input = document.querySelector(this.getAttribute('toggle'));
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      this.classList.toggle('fa-eye');
+      this.classList.toggle('fa-eye-slash');
+    });
+  });
