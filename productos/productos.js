@@ -1,19 +1,24 @@
 let listaProductos = [];
 
-function crearCard(nombre, imagen, precio){
+
+function crearCard(nombre, imagen, precio, descripcion){
 const contenedor = document.getElementById('contenedor-cards');
-    contenedor.innerHTML += ` <div class="card">
-                <div class="card-image">
-                    <img src="${imagen}" alt="Imagen de la card">
-                    </div>
-                    <div class="card-content">
-                        <h2>${precio}</h2>
-                        <p>${nombre}</p>
-                    </div>
-                </div>`
+    contenedor.innerHTML += ` 
+              
+                <div class="card">
+                 <a href="../detalle_producto/detalle_producto.html">
+                    <div class="card-image">
+                        <img src="${imagen}" alt="Imagen de la card">
+                        </div>
+                        <div class="card-content">
+                            <h2>${precio}</h2>
+                            <p>${nombre}</p>
+                            <p class ="descripcion">${descripcion}</p>
+                        </div>   
+                      </a> 
+                    </div>`
+
 }
-
-
 
 
 
@@ -27,7 +32,7 @@ fetch('../productos.json')
     let Lista = listaProductos;
     
     Lista.forEach(element => {
-        crearCard(element.nombre, element.imagen, element.precio)
+        crearCard(element.nombre, element.imagen, element.precio, element.descripcion)
     
 });
 })
@@ -38,10 +43,32 @@ let local = JSON.parse(localStorage.getItem("KeyLista"))
 console.log(local);
 
 local.forEach(element => {
-    crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio)
+    crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio, element.descripcion)
 });
 
 });
+
+
+////Detalle producto
+const contenedor = document.getElementById('contenedor-cards');
+
+contenedor.addEventListener("click", function (event) {
+
+    const card = event.target.closest(".card");
+    if (card) {
+        const detalleProducto = [{
+            precio: card.querySelector(".card-content h2").textContent,
+            nombre: card.querySelector(".card-content p").textContent,
+            imagen: "../img/"+card.querySelector(".card-image img").src.split("/img/").pop(),
+            descripcion: card.querySelector(".descripcion").textContent
+        }];
+        
+
+        console.log(detalleProducto);
+        localStorage.setItem("productoSeleccionado",JSON.stringify(detalleProducto));
+    }
+});
+
 
 // fetch('../productos.json')
 //     .then(response => response.json();

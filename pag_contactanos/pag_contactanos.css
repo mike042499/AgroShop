@@ -117,7 +117,7 @@ p {
 .contenedor-inicio h1 {
     position: relative;
     font-family: "Cormorant";
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: 4rem;
     font-style: normal;
     font-weight: bold;
     z-index: 2;
@@ -129,10 +129,11 @@ p {
 .contenedor-formulario {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     padding: 7% 7% 0 7%;
+    gap: 3rem;
 }
 
 
@@ -168,14 +169,11 @@ p {
 }
 
 input[type=number] {
-    -moz-appearance: textfield; /* Firefox antiguos */
-    -webkit-appearance: none;   /* Chrome, Safari antiguos */
-    appearance: textfield;      /* Estándar moderno */
+    -moz-appearance: textfield; /* Firefox */
 }
-/* Quitar las flechitas en Chrome, Safari y Edge */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    -webkit-appearance: none;  /* Chrome, Safari, Edge */
     margin: 0;
 }
 
@@ -199,25 +197,23 @@ input[type=number]::-webkit-outer-spin-button {
 .contenedor-campesino{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
-    height: 100%;
     margin: 0%;
     padding: 0%;
 }
 
 .contenedor-campesino img{
+    display: block; 
     width: 30rem;
     height: auto;
     max-width: 100%;
     max-height: 100%;
     padding: 0%;
     margin: 0%;
-    margin-bottom: 0;
 }
 
 .footer-pagina{
-    margin-top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

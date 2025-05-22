@@ -20,6 +20,10 @@ p{
     font-size: 20px;
 }
 
+a{
+    text-decoration: none;;
+}
+
 .navbar-brand img{
     width: 60px; /* o el tamaño que quieras */
     object-fit: contain; /* para que no se deforme el logo */
@@ -90,7 +94,7 @@ form button:hover{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #a4bc00; 
+    border: 1px solid var(--beige-suave); 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -130,15 +134,39 @@ form button:hover{
   
 .card-content h2{
     margin-bottom: 0rem;
+    text-align: left;
 }
 
 .card-content p{
     margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+/*.card-content p:first-of-type {
+    font-size: 16px; /* o el tamaño que prefieras 
+    font-weight: bold; /* opcional, si quieres destacarlo más 
+}*/
+
+.card-content  p:first-of-type {
+    font-size: 24px; /* o un tamaño menor */
+}
+
+.card-content p:nth-of-type(2) {
+    font-size: 14px; /* o un tamaño menor */
 }
 
 .card-content span{
     font-size: 20px;
 
+}
+
+.card-content p.descripcion {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;        /* Número de líneas que querés mostrar */
+    -webkit-box-orient: vertical;
+    max-height: 3.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 footer{
@@ -161,3 +189,72 @@ footer .fa-brands:hover{
   transition: all 0.3s ease;
 }
 
+.boton-flotante {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: var(--hover-verde);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+/*.boton-flotante {
+    position: fixed;
+    bottom: 4.375rem; /* equivale a 70px si 1rem = 16px 
+    right: 1.25rem;
+    background-color: var(--verde-principal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}*/
+  
+.boton-flotante:hover {
+    background-color: var(--verde-principal);
+}
+
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--hover-verde);
+    color: white;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+    .boton-flotante {
+      bottom: 4.2rem; /* 20px */
+      right: 0.2rem;     /* 16px */
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+  }

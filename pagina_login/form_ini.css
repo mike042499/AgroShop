@@ -47,17 +47,6 @@
     font-family: 'DM Sans', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
- 
-:root {
-    --verde-principal: #546f01;
-    --hover-verde: #a4bc00;
-    --beige-suave: #d8cabb;
-    --madera: #a88f6b;
-    --blanco: #ffffff;
-    --negro: #000000;
-}
  
 /* Reset básico */
 * {
@@ -72,21 +61,7 @@ html, body {
     background-color: #d8cabb;
 }
  
-/* NAVBAR */
-.navbar {
-    background-color: var(--blanco);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
- 
-.navbar .nav-link {
-    color: var(--verde-principal);
-    font-weight: 600;
-}
- 
-.navbar .nav-link:hover {
-    color: var(--hover-verde);
-}
- 
+
 /* CONTENIDO LOGIN */
 .contenido {
     max-width: 400px;
@@ -170,16 +145,7 @@ span.error {
     background-color: var(--verde-principal);
 }
  
-/* FOOTER */
-footer.footer-pagina {
-    background-color: var(--beige-suave);
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-}
+
  
 .contenedor-Agroshop {
     margin-left: 1rem;

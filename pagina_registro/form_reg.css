@@ -13,6 +13,25 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+/* --- Ícono del ojo --- */
+.toggle-password {
+    position: absolute;
+    top: 65%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /*color: #6c757d;  Gris Bootstrap */
+    color: var(--madera);
+    z-index: 2;
+  }
+   
+  /* --- Campo de error --- */
+  /*.error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }*/
 
 #modal-mensaje{
     display: none;
