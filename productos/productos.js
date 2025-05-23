@@ -13,7 +13,7 @@ const contenedor = document.getElementById('contenedor-cards');
                         <div class="card-content">
                             <h2>${precio}</h2>
                             <p>${nombre}</p>
-                            <p class ="descripcion">${descripcion}</p>
+                            <button>Ver más</button>
                         </div>   
                       </a> 
                     </div>`

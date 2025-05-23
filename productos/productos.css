@@ -160,6 +160,24 @@ form button:hover{
 
 }
 
+.card-content button{
+    height: 30px;
+    width: 78px;
+    color: #ffffff;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    /*background-color: rgba(168, 143, 107, 0.25);*/
+    background-color: var(--hover-verde);
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-bottom: 4px;
+}
+
+.card-content button:hover{
+    background-color: rgba(168, 143, 107, 0.25);
+}
+
 .card-content p.descripcion {
     display: -webkit-box;
     -webkit-line-clamp: 2;        /* Número de líneas que querés mostrar */
