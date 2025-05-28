@@ -117,7 +117,7 @@ p{
   }
 
 .card-content{
-    background-color: #a4bc00;
+    background-color: var(--verde-principal);
     border-radius: 0 0 15px 15px;
     color: #ffffff;
     cursor: pointer;
@@ -154,6 +154,24 @@ p{
 .card-content span{
     font-size: 20px;
 
+}
+
+.card-content button{
+    height: 30px;
+    width: 78px;
+    color: #ffffff;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    /*background-color: rgba(168, 143, 107, 0.25);*/
+    background-color: var(--hover-verde);
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-bottom: 4px;
+}
+
+.card-content button:hover{
+    background-color: rgba(168, 143, 107, 0.25);
 }
 
 .section-contenedor-filtros {

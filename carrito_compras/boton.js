@@ -1,12 +1,12 @@
 let contadorSpan = document.querySelector(".contador-carrito");
-let contenido = JSON.parse(localStorage.getItem("carrito") || []);
+let contenido = JSON.parse(localStorage.getItem("carrito"));
 let botonFlotante = document.querySelector(".boton-flotante").parentElement;
 
 function leerCarrito(){
-    if (contenido.length > 0){
-        contadorSpan.textContent = `${contenido.length}`;
-    } else {
+    if (contenido == null || contenido.length == 0){
         contadorSpan.textContent = "0";
+    } else if (contenido.length > 0){
+        contadorSpan.textContent = `${contenido.length}`;
     }
 }
 
