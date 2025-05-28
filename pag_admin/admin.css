@@ -13,21 +13,24 @@ body {
     font-size: 3rem;
     font-style: normal;
     font-weight: bold;
+    padding: 4% 0% 0% 4%;
+    margin: 0%;
 }
 
 #crear-producto{
     margin: 5%;
-    padding: 5%;
+    padding: 0%;
     background-color: #a88f6b;
     border-radius: 50px;
+    width: 60%;
+    justify-self: center;
 
 }
 
 .formulario{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 8% 10% 10% 10%;
+    padding: 5% 10% 10% 10%;
     gap:1rem;
 }
 
@@ -64,6 +67,7 @@ body {
     padding: 2%;
     border-radius: 20px;
     border: none;
+    width: 7rem;
 }
 
 #productos{
