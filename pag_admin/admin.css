@@ -34,7 +34,7 @@ body {
     gap:1rem;
 }
 
-.formulario h2{
+.formulario h6{
     margin: 0%;
     font-family: "DM Sans";
     font-weight: normal;
@@ -43,6 +43,15 @@ body {
 }
 
 .formulario-input{
+    padding: 2%;
+    font-family: "DM Sans";
+    font-weight: normal;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+}
+
+#file-upload-button{
     padding: 2%;
     font-family: "DM Sans";
     font-weight: normal;

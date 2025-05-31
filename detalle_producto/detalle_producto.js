@@ -91,7 +91,7 @@ function mostrarModal(mensaje, color='black'){
     modal.style.display = 'flex';
     modalTexto.textContent = mensaje;
     modalTexto.style.color = color;
-
+    
     animacion.goToAndPlay(0, true);
 
     setTimeout(() => {
