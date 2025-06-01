@@ -68,7 +68,6 @@ p{
     width: 30%;  /*Esto da 3 por fila en desktop */
     min-width: 250px;
     max-width: 300px;
-    margin: 2rem;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -125,8 +124,6 @@ p{
 .card-content p:first-of-type {
     font-size: 16px; 
     font-weight: bold; 
-    margin-top: 30px;
-
 }
 
 .card-content p:nth-of-type(2) {
