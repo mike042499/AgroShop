@@ -1,6 +1,5 @@
 //Variables
 let usuarioIngresado = JSON.parse(localStorage.getItem("ingresoUsuario"));
-console.log(usuarioIngresado);
 const contenedorHeader = document.getElementById("navbarSupportedContent").firstElementChild;
 
 //Funciones
