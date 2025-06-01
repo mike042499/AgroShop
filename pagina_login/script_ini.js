@@ -29,7 +29,8 @@ function validarUsuario(funUsiario, funContraseña){
         if(usuario.email===funUsiario){
             valida=1;
             if(usuario.contraseña===funContraseña){
-                valida=2
+                valida=2;
+                localStorage.setItem("ingresoUsuario", JSON.stringify(usuario));
                 return valida
             }
         }
