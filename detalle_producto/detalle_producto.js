@@ -50,9 +50,9 @@ function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
     let precioFloat =precio;
 
     productNameElement.textContent = nombre;
-    productCostElement.textContent = `$ ${precioFloat} / lb`;
+    productCostElement.textContent = `$ ${formatoMoneda(precioFloat)} / kg`;
 
-    originalCostElement.textContent = `$ ${(precioFloat * 1.15).toFixed(0)} / lb`
+    originalCostElement.textContent = `$ ${formatoMoneda((precioFloat * 1.15))} / kg`
 
     const imagenUrl = productImgElement.querySelector('img');
     imagenUrl.src = imagen;
@@ -63,14 +63,14 @@ function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
 
     productAmountElement.textContent = `${cantidad}`;
     
-    productTotal.textContent = `$ ${cantidad * precioFloat}`;
+    productTotal.textContent = `$ ${formatoMoneda(cantidad * precioFloat)}`;
 }
 
 function aumentarCantidad(){
     if (cantidad >= 1){
         cantidad += 1;
     }
-    console.log(cantidad)
+    // console.log(cantidad)
     productSelected.cantidad = cantidad;
 }
 
@@ -78,7 +78,7 @@ function disminuirCantidad(){
     if (cantidad > 1){
         cantidad -= 1;
     }
-    console.log(cantidad)
+    // console.log(cantidad)
     productSelected.cantidad = cantidad;
 }
 
@@ -93,6 +93,15 @@ function agregarCarrito(){
         carritoVacio.push(productSelected);
         localStorage.setItem("carrito", JSON.stringify(carritoVacio));
     }
+}
+
+//Formato Moneda
+function formatoMoneda(numero){
+    let valorMoneda = numero.toLocaleString('es-Co', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    })
+    return valorMoneda
 }
 
 //Modal
