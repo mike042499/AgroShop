@@ -124,5 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //A ventana de pago.
 botonPago.addEventListener('click', () => {
-    alert(`Vas a pagar un valor de ${formatoMoneda(totalFinal)} $`)
+    //Validacion metodo de pago
+    const metodosPago = document.querySelectorAll(".form-check-input");
+    let seleccion = false;
+
+    metodosPago.forEach((metodo) => {
+        if(metodo.checked){
+            seleccion = true;
+        }
+    });
+
+    if (!seleccion){
+        alert("Debes elegir un método de pago")
+    } else {
+        alert(`Vas a pagar un valor de ${formatoMoneda(totalFinal)} $`)
+    }
 })
