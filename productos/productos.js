@@ -11,9 +11,11 @@ const contenedor = document.getElementById('contenedor-cards');
                         <img src="${imagen}" alt="Imagen de la card">
                         </div>
                         <div class="card-content">
+                            
                             <h2>${precio}</h2>
                             <p>${nombre}</p>
-                            <p class ="descripcion">${descripcion}</p>
+                            <p class = "descripcion" style="display: none;">${descripcion}</p>
+                            <button>Ver más</button>
                         </div>   
                       </a> 
                     </div>`
@@ -40,11 +42,12 @@ fetch('../productos.json')
 
 
 let local = JSON.parse(localStorage.getItem("KeyLista"))
-console.log(local);
 
-local.forEach(element => {
-    crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio, element.descripcion)
-});
+if (local != null){
+    local.forEach(element => {
+        crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio, element.descripcion)
+    });
+}
 
 });
 

@@ -11,16 +11,13 @@
     --negro: #000000;
 }
 
-* {
-    font-family: 'DM Sans', sans-serif;
-}
 
 body {
     background-color: var(--beige-suave);
 }
 
 .navbar-brand img{
-    width: 60px; /* o el tamaño que quieras */ /* o el tamaño que quieras */
+    width: 60px; 
     object-fit: contain; /* para que no se deforme el logo */
     transition: all 0.3s ease;
     
@@ -32,7 +29,7 @@ body {
 
 .card-content h2 {
     font-family: 'DM Sans', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     text-align: left;
   }
 p{
@@ -42,7 +39,7 @@ p{
 
 
 .card-content p:nth-of-type(2) {
-    font-size: 15px;
+    font-size: 10px;
 }
 
 
@@ -51,16 +48,6 @@ p{
     object-fit: cover;
     object-position: top;
   }
-
-
-
-/*.container-imagen img{
-    width: 100%;
-    display: block;
-    height: auto;
-    opacity: 0.5;
-    padding: 0;
-}*/
 
 .container-destacados{
     background-color: #546f01;
@@ -74,21 +61,17 @@ p{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /*padding: 100px; /*se coloco para ajustar tarjetas*/
-    gap: 6rem;
-    /*padding: 80px;*/
-    
-    
+    gap: 6rem;   
 }
 
 .card{
     width: 30%;  /*Esto da 3 por fila en desktop */
     min-width: 250px;
     max-width: 300px;
-    margin: 2rem;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: 1px solid var(--beige-suave); 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
     background-color: #ffffff;
@@ -117,43 +100,65 @@ p{
   }
 
 .card-content{
-    background-color: #a4bc00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
     border-radius: 0 0 15px 15px;
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
-    padding: 0 0 0 0.5rem;
-
-    
-   
+    padding: 0rem;
+    height: 12rem;
 }
   
 .card-content h2{
-    margin-bottom: 0rem;
+    margin: 0 0 0 16px;
+    width: 14rem;
 }
 
 .card-content p{
-    margin-top: 0rem;
-    margin-bottom: 0rem;
+    width: 14rem;
+    margin: 0 0 0 16px;
 }
 
-/*estilos de prueba*/
-
 .card-content p:first-of-type {
-    font-size: 16px; /* o el tamaño que prefieras */
-    font-weight: bold; /* opcional, si quieres destacarlo más */
+    font-size: 16px; 
+    font-weight: bold; 
 }
 
 .card-content p:nth-of-type(2) {
-    font-size: 24px; /* o un tamaño menor */
+    font-size: 24px; 
+    width: 14rem;
 }
 
 .card-content p:nth-of-type(3) {
-    font-size: 14px; /* o un tamaño menor */
+    font-size: 14px; 
+    width: 14rem;
 }
 
 .card-content span{
     font-size: 20px;
+    width: 15rem;
+    margin: 0;
 
+}
+
+.card-content button{
+    height: 2rem;
+    width: 100%; /* ← se adapta al ancho del contenedor */
+    max-width: 14rem;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background-color: var(--hover-verde);
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin: 10px auto 10px auto; 
+}
+
+.card-content button:hover{
+    background-color: var(--verde-principal);
 }
 
 .section-contenedor-filtros {

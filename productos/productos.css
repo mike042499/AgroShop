@@ -21,7 +21,7 @@ p{
 }
 
 a{
-    text-decoration: none;;
+    text-decoration: none;
 }
 
 .navbar-brand img{
@@ -76,6 +76,11 @@ form button:hover{
     opacity: 0.5;
     padding: 0;
 }
+.card-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+  }
 
 .contenedor{
     background-color: #d8cabb;
@@ -94,6 +99,7 @@ form button:hover{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: 1px solid var(--beige-suave); 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.30); /* sombra sutil */
     background-color: #ffffff;
@@ -121,48 +127,65 @@ form button:hover{
     object-fit: contain; /* Asegura que la imagen se vea completa */
   }
 
-.card-content{
-    background-color: #546f01;
-    border-radius: 0 0 15px 15px;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 0 0 0 0.5rem;
 
-    
-   
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 0 0 15px 15px;
+    color: #000000;
+    cursor: pointer;
+    padding: 0rem;
+    height: 12rem;
 }
-  
+
 .card-content h2{
-    margin-bottom: 0rem;
     text-align: left;
+    font-size: 28px;
+    margin: 0 0 0 16px;
+    width: 14rem;
 }
 
 .card-content p{
-    margin-top: 0rem;
-    margin-bottom: 0rem;
+    width: 14rem;
+    margin: 0 0 0 16px;
 }
+  
 
-/*.card-content p:first-of-type {
-    font-size: 16px; /* o el tamaño que prefieras 
-    font-weight: bold; /* opcional, si quieres destacarlo más 
+/*.card-content  p:first-of-type { Descomentar si agrego estrellas en productos
+    font-size: 16px; 
+    font-weight: bold; 
+    margin-top: 30px;
 }*/
 
-.card-content  p:first-of-type {
-    font-size: 24px; /* o un tamaño menor */
-}
-
 .card-content p:nth-of-type(2) {
-    font-size: 14px; /* o un tamaño menor */
+    font-size: 24px; 
 }
 
-.card-content span{
-    font-size: 20px;
-
+.card-content button{
+    height: 2rem;
+    width: 100%; /* ← se adapta al ancho del contenedor */
+    max-width: 14rem;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background-color: var(--hover-verde);
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin: 10px auto 10px auto; 
 }
+
+.card-content button:hover{
+    background-color: var(--verde-principal);
+}
+
 
 .card-content p.descripcion {
     display: -webkit-box;
-    -webkit-line-clamp: 2;        /* Número de líneas que querés mostrar */
+    -webkit-line-clamp: 2;        
     -webkit-box-orient: vertical;
     max-height: 3.2em;
     overflow: hidden;
@@ -208,25 +231,7 @@ footer .fa-brands:hover{
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
-/*.boton-flotante {
-    position: fixed;
-    bottom: 4.375rem; /* equivale a 70px si 1rem = 16px 
-    right: 1.25rem;
-    background-color: var(--verde-principal);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-}*/
+
   
 .boton-flotante:hover {
     background-color: var(--verde-principal);
