@@ -8,6 +8,46 @@ body {
 }
 
 
+#modal-actualizar, #modal-mensaje{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-cuerpo{
+    background-color: #a88f6b;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+
+#modal-cuerpo-arbol{
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+#modal-animacion {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+
+#modal-texto{
+    margin: 0;
+}
+
+
+
 #crear-producto h1{
     font-family: "Cormorant";
     font-size: 3rem;

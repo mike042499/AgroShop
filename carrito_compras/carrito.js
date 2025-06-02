@@ -34,7 +34,7 @@ function crearItem(nombre, precio, imagenRuta, cantidad){
     productDiv.classList.add("product-list");
 
     const productImage = document.createElement('img');
-    productImage.src = "../img/"+imagenRuta.split("/img/").pop();
+    productImage.src = imagenRuta;
     productImage.alt = `Imagen de ${nombre}`;
 
     const productName = document.createElement('h4');

@@ -11,6 +11,13 @@
 <body>
   <main>
 
+ <div id="modal-mensaje">
+      <div id="modal-cuerpo-arbol">
+        <div id="modal-animacion"></div>
+        <p id="modal-texto"></p>
+      </div>
+    </div>
+
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-w">
             <div class="container-fluid">
@@ -43,23 +50,51 @@
     <section id="crear-producto">
       <h1>¡Hola Administrador!</h1>
       <form class="formulario">
-        <h6>Nombre del producto</h2>
+        <h6>Nombre del producto</h6>
         <input type="text" class="formulario-input" id="nombreProducto" placeholder="Nombre producto" required />
 
-        <h6>Precio del producto</h2>
+        <h6>Precio del producto</h6>
         <input type="number" class="formulario-input" id="precioProducto" placeholder="Precio producto" min="0" step="0.01" required />
 
-        <h6>Descripción del producto</h2>
+        <h6>Cantidad</h6>
+        <input type="number" class="formulario-input" id="cantidadProducto" placeholder="Cantidad en Kg" min="0" step="0.01" required />
+
+        <h6>Descripción del producto</h6>
         <textarea class="formulario-input" id="descripcionProducto" placeholder="Descripción del producto" required></textarea>
 
-        <h6>Imagen del producto</h2>
+        <h6>Imagen del producto</h6>
         <div class="mb-3">
         <input class="form-control" type="file" id="imageUpload" accept="image/*" required>
         </div>
 
-        <button type="submit">Enviar</button>
+        <button  type="submit">Enviar</button>
       </form>
     </section>
+
+  <div id="modal-actualizar">
+      <div id="modal-cuerpo" class="formulario">
+        <h6>Nombre del producto</h6>  <h6 id="id-producto"></h6>
+        <input type="text" class="formulario-input" id="nombreModal" placeholder="Nombre producto" required />
+
+        <h6>Precio del producto</h6>
+        <input type="number" class="formulario-input" id="precioModal" placeholder="Precio producto" min="0" step="0.01" required />
+
+        <h6>Cantidad</h6>
+        <input type="number" class="formulario-input" id="cantidadModal" placeholder="Cantidad en Kg" min="0" step="0.01" required />
+
+        <h6>Descripción del producto</h6>
+        <textarea class="formulario-input" id="descripcionModal" placeholder="Descripción del producto" required></textarea>
+
+        <h6>Imagen del producto</h6>
+        <div class="mb-3">
+        <input class="form-control" type="file" id="imageModal" accept="image/*" required>
+        </div>
+
+        <button id="botonModalActualizar">Enviar</button>
+      </div>
+    </div>
+
+
 
     <section id="productos">
       <h1>Tabla productos</h1>
@@ -98,6 +133,7 @@
 
   <!-- Scripts adicionales -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
   <script src="admin.js"></script>
 </body>
 </html>

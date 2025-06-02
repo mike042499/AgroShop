@@ -18,12 +18,23 @@ const shoppingCartButton = document.getElementById("shopping-cart");
 //Funciones
 
 function leerProducto(){
-    let product = JSON.parse(localStorage.getItem("productoSeleccionado") || []);
-    product = product[0];
-    productSelected = product;
-    productSelected.cantidad = cantidad;
+    const params = new URLSearchParams(window.location.search);
+    const nombre = params.get("nombre");
 
-    renderizar();
+    console.log(typeof nombre);
+    
+
+    fetch(`http://localhost:8080/productos/nombre/${nombre.toLowerCase()}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log("Producto:", data);
+      let product = data;
+      productSelected = product;
+      productSelected.cantidad = cantidad;
+  
+      renderizar();
+    });
+
 }
 
 function renderizar(){
@@ -36,7 +47,7 @@ function renderizar(){
 }
 
 function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
-    let precioFloat = parseFloat(precio.replace("$", "").replace("Kg", "").trim());
+    let precioFloat =precio;
 
     productNameElement.textContent = nombre;
     productCostElement.textContent = `$ ${precioFloat} / lb`;
