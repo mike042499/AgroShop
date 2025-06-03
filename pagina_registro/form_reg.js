@@ -30,22 +30,43 @@ function tomar_datos(event){
     const aprobado=validarForm(nombre,email,celular,direccion,contraseña,validacion);
     if(aprobado){
        const usuario = {
-            id: contador++,
             nombre: nombre,
-            email: email,
-            celular: celular,
-            ciudad: localidad,
             direccion: direccion,
+            localidad: localidad,
+            telefono: celular,
+            correo: email,
             contraseña: contraseña
         };
+
+        agregarUsuario(usuario);
+
         listaUsuarios.push(usuario);
     // console.log(JSON.stringify(listaProductos, null, 2));
         localStorage.setItem("KeyUsuarios",JSON.stringify(listaUsuarios));
-        mostrarModal("Registro exitoso", "black");
         limpiarFormulario();
     }
 }
 
+
+
+
+function agregarUsuario(usuario){
+    
+    fetch(`http://localhost:8080/usuarios`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(usuario)
+      })
+        .then(response => response.text()) // <- importante: leer como texto
+        .then(message => {
+           mostrarModal(message, "black"); // mostrará: "Pedido borrado con exito"
+        })
+        .catch(error => {
+            console.error("Error al agregar pedido:", error);
+        });
+}
 
 function validarForm(nombre,email,celular,direccion,contraseña,validacion){
     let bandera=false;

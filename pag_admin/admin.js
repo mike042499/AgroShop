@@ -1,5 +1,4 @@
 
-
 const listaProductos = JSON.parse(localStorage.getItem("KeyLista")) || [];
 let contador = listaProductos?.length;
 
@@ -50,6 +49,46 @@ document.querySelector(".formulario").addEventListener("submit", async function 
 
 // Función para mostrar los productos en la tabla
 function renderizarTablaProductos() {
+
+  limpiarTablar();
+
+  fetch('http://localhost:8080/productos')
+ .then(response => response.json())
+ .then(data => {console.log(data)
+
+  
+    data.forEach(element => {
+        crearTabla(element.id_producto, element.nombre, element.precio, element.imagen)
+    
+ });
+ })
+.catch(error => console.error('Error:', error));
+
+
+}
+
+// Función para eliminar un producto (opcional)
+function eliminarProducto(id) {
+  
+  if (confirm("¿Seguro que deseas eliminar este producto?")) {
+
+     fetch(`http://localhost:8080/productos/borrar/${id}`, {
+        method: "DELETE",
+      })
+      .then(response => {
+      if (response.ok) {
+        alert("Producto eliminado con éxito");
+        renderizarTablaProductos();
+      } else {
+        alert("Error al eliminar el producto");
+      }
+      })
+  }
+}
+
+
+
+function crearTabla(id, nombre, precio, imagen){
   const tbody = document.getElementById("tabla-productos-body");
   tbody.innerHTML = "";
 

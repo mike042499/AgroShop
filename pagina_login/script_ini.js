@@ -13,30 +13,35 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("login").addEventListener("submit", ingresoUsuario);
 });
 
-function ingresoUsuario(event){
+async function ingresoUsuario(event){
     event.preventDefault();
     limpiarErrores();
     const usuario= document.getElementById("correoUsuario").value;
     const contraseña = document.getElementById("passwordUsuario").value;
-    const valor=validarUsuario(usuario, contraseña);
+    const valor = await validarUsuario(usuario, contraseña);
     console.log(valor);
     mostrarErrores(valor);
 }
 
-function validarUsuario(funUsiario, funContraseña){
-    let valida=0;
-    listaUsuarios.forEach(usuario => {
-        if(usuario.email===funUsiario){
-            valida=1;
-            if(usuario.contraseña===funContraseña){
-                valida=2;
-                localStorage.setItem("ingresoUsuario", JSON.stringify(usuario));
-                return valida
+async function validarUsuario(funUsiario, funContraseña) {
+    try {
+        const response = await fetch(`http://localhost:8080/usuarios/correo/${funUsiario}`);
+        const data = await response.json();
+        
+        if (data.correo === funUsiario) {
+            if (data.contraseña === funContraseña) {
+                localStorage.setItem("ingresoUsuario", JSON.stringify(data));
+                return 2; // Usuario y contraseña correctos
             }
+            return 1; // Solo usuario correcto
         }
-    });
-    return valida
+
+        return 0; // Usuario incorrecto
+    } catch (error) {
+        console.error('Error al validar el usuario:', error);
+    }
 }
+
 
 function mostrarErrores(numero){
     switch(numero){
