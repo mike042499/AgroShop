@@ -40,29 +40,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
 fetch('http://localhost:8080/productos')
 .then(response => response.json())
-.then(data => {console.log(data)
-    listaProductos = data;
-    console.log("Esta es la lista", listaProductos);
-    let Lista = listaProductos;
-    
-    console.log(Lista);
-    
-
-
-    Lista.forEach(element => {
-        crearCard(element.nombre, element.imagen, element.precio)
+.then(data => {
+    data.forEach(element => {
+        crearCard(element.nombre, element.imagen, element.precio, element.descripcion)
     
 });
-})
-.catch(error => console.error('Error:', error));
+}).catch(error => console.error('Error:', error));
 
-
-
-if (local != null){
-    local.forEach(element => {
-        crearCard(element.nombre, "../img/arroz-removebg-preview.png", element.precio, element.descripcion)
-    });
-}
 
 });
 

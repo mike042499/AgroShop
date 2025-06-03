@@ -67,15 +67,9 @@ function renderizarTablaProductos() {
   fetch('http://localhost:8080/productos')
  .then(response => response.json())
  .then(data => {console.log(data)
-    listaProductos = data;
-    console.log("Esta es la lista", listaProductos);
-    let Lista = listaProductos;
-    
-    console.log(Lista);
-    
 
-
-    Lista.forEach(element => {
+  
+    data.forEach(element => {
         crearTabla(element.id_producto, element.nombre, element.precio, element.imagen)
     
  });
