@@ -34,7 +34,7 @@ function crearItem(nombre, precio, imagenRuta, cantidad){
     productDiv.classList.add("product-list");
 
     const productImage = document.createElement('img');
-    productImage.src = "../img/"+imagenRuta.split("/img/").pop();
+    productImage.src = imagenRuta;
     productImage.alt = `Imagen de ${nombre}`;
 
     const productName = document.createElement('h4');
@@ -43,27 +43,24 @@ function crearItem(nombre, precio, imagenRuta, cantidad){
 
     const productCost = document.createElement('p');
     productCost.classList.add("product-cost");
-    productCost.textContent = precio;
-    const precioNumero = parseFloat(productCost.textContent.replace("$", "").replace("Kg", "").trim())
+    const precioNumero = parseFloat(precio.replace("$", "").replace("Kg", "").trim())
+    productCost.textContent = `$ ${formatoMoneda(precioNumero)} / Kg`;
 
     const productCount = document.createElement('p');
     productCount.classList.add("product-count")
     productCount.textContent = cantidad;
 
-    const productSpan = document.createElement('span');
-    productSpan.textContent = "$";
-
     const productTotal = document.createElement('p');
     productTotal.classList.add("product-total");
     const finalCost = (precioNumero * cantidad);
-    productTotal.textContent = finalCost;
+    productTotal.textContent = `$ ${formatoMoneda(finalCost)}`;
 
     //Actualizacion resumen
     subTotal += finalCost;
-    subTotalElement.textContent = `${subTotal} $`;
+    subTotalElement.textContent = `$ ${formatoMoneda(subTotal)}`;
     totalFinal = subTotal + envio;
-    botonPago.textContent = `${totalFinal} $`;
-    elementoEnvio.textContent = `${envio} $`;
+    botonPago.textContent = `$ ${formatoMoneda(totalFinal)}`;
+    elementoEnvio.textContent = `$ ${formatoMoneda(envio)}`;
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add("delete-item");
@@ -79,16 +76,14 @@ function crearItem(nombre, precio, imagenRuta, cantidad){
 
         //Actualizacion resumen
         subTotal -= finalCost;
-        subTotalElement.textContent = `${subTotal} $`;
+        subTotalElement.textContent = `$ ${formatoMoneda(subTotal)}`;
         totalFinal = subTotal + envio;
-        botonPago.textContent = `${totalFinal} $`;
-        elementoEnvio.textContent = `${envio} $`;
+        botonPago.textContent = `$ ${formatoMoneda(totalFinal)}`;
+        elementoEnvio.textContent = `$ ${formatoMoneda(envio)}`;
     })
 
     productDiv.appendChild(productImage);
     productDiv.appendChild(productName);
-    productCost.appendChild(productSpan);
-    productTotal.appendChild(productSpan);
     productTotal.appendChild(deleteButton);
 
     contenedor.appendChild(productDiv);
@@ -106,6 +101,15 @@ function eliminarItem(texto){
     guardarLista();
 }
 
+//Formato Moneda
+function formatoMoneda(numero){
+    let valorMoneda = numero.toLocaleString('es-Co', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    })
+    return valorMoneda
+}
+
 //Eventos
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -115,5 +119,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //A ventana de pago.
 botonPago.addEventListener('click', () => {
-    alert(`Vas a pagar un valor de ${totalFinal} $`)
+    //Validacion metodo de pago
+    const metodosPago = document.querySelectorAll(".form-check-input");
+    let seleccion = false;
+
+    metodosPago.forEach((metodo) => {
+        if(metodo.checked){
+            seleccion = true;
+        }
+    });
+
+    if (!seleccion){
+        alert("Debes elegir un método de pago")
+    } else {
+        alert(`Vas a pagar un valor de ${formatoMoneda(totalFinal)} $`)
+    }
 })

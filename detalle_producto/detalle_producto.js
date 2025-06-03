@@ -18,12 +18,23 @@ const shoppingCartButton = document.getElementById("shopping-cart");
 //Funciones
 
 function leerProducto(){
-    let product = JSON.parse(localStorage.getItem("productoSeleccionado") || []);
-    product = product[0];
-    productSelected = product;
-    productSelected.cantidad = cantidad;
+    const params = new URLSearchParams(window.location.search);
+    const nombre = params.get("nombre");
 
-    renderizar();
+    console.log(typeof nombre);
+    
+
+    fetch(`http://localhost:8080/productos/nombre/${nombre.toLowerCase()}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log("Producto:", data);
+      let product = data;
+      productSelected = product;
+      productSelected.cantidad = cantidad;
+  
+      renderizar();
+    });
+
 }
 
 function renderizar(){
@@ -36,12 +47,12 @@ function renderizar(){
 }
 
 function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
-    let precioFloat = parseFloat(precio.replace("$", "").replace("Kg", "").trim());
+    let precioFloat =precio;
 
     productNameElement.textContent = nombre;
-    productCostElement.textContent = `$ ${precioFloat} / lb`;
+    productCostElement.textContent = `$ ${formatoMoneda(precioFloat)} / kg`;
 
-    originalCostElement.textContent = `$ ${(precioFloat * 1.15).toFixed(0)} / lb`
+    originalCostElement.textContent = `$ ${formatoMoneda((precioFloat * 1.15))} / kg`
 
     const imagenUrl = productImgElement.querySelector('img');
     imagenUrl.src = imagen;
@@ -52,14 +63,14 @@ function mostrarProducto(nombre, precio, imagen, descripcion, cantidad){
 
     productAmountElement.textContent = `${cantidad}`;
     
-    productTotal.textContent = `$ ${cantidad * precioFloat}`;
+    productTotal.textContent = `$ ${formatoMoneda(cantidad * precioFloat)}`;
 }
 
 function aumentarCantidad(){
     if (cantidad >= 1){
         cantidad += 1;
     }
-    console.log(cantidad)
+    // console.log(cantidad)
     productSelected.cantidad = cantidad;
 }
 
@@ -67,7 +78,7 @@ function disminuirCantidad(){
     if (cantidad > 1){
         cantidad -= 1;
     }
-    console.log(cantidad)
+    // console.log(cantidad)
     productSelected.cantidad = cantidad;
 }
 
@@ -82,6 +93,15 @@ function agregarCarrito(){
         carritoVacio.push(productSelected);
         localStorage.setItem("carrito", JSON.stringify(carritoVacio));
     }
+}
+
+//Formato Moneda
+function formatoMoneda(numero){
+    let valorMoneda = numero.toLocaleString('es-Co', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    })
+    return valorMoneda
 }
 
 //Modal

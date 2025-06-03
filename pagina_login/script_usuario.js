@@ -24,5 +24,7 @@ function mostrarNombre(nombre){
 
 //Eventos
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarNombre(usuarioIngresado.nombre);
+    if (usuarioIngresado != null){
+        mostrarNombre(usuarioIngresado.nombre);
+    }
 })
