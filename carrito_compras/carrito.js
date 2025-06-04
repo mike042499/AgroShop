@@ -43,7 +43,7 @@ function crearItem(nombre, precio, imagenRuta, cantidad){
 
     const productCost = document.createElement('p');
     productCost.classList.add("product-cost");
-    const precioNumero = parseFloat(precio.replace("$", "").replace("Kg", "").trim())
+    const precioNumero = parseFloat(precio)
     productCost.textContent = `$ ${formatoMoneda(precioNumero)} / Kg`;
 
     const productCount = document.createElement('p');
