@@ -15,6 +15,23 @@ window.location.href = `../detalle_producto/detalle_producto.html?nombre=${nombr
 }
 
 
+function limpiarCards() {
+    const contenedor = document.getElementById('contenedor-cards');
+    contenedor.innerHTML = '';
+}
+
+
+function cargarTodasCards(){
+    fetch('http://localhost:8080/productos')
+.then(response => response.json())
+.then(data => {
+    data.forEach(element => {
+        crearCard(element.nombre, element.imagen, element.precio, element.descripcion)
+    
+});
+}).catch(error => console.error('Error:', error));
+}
+
 
 function crearCard(nombre, imagen, precio, descripcion){
 const contenedor = document.getElementById('contenedor-cards');
@@ -38,14 +55,27 @@ const contenedor = document.getElementById('contenedor-cards');
 
 document.addEventListener('DOMContentLoaded', function(){
     
-fetch('http://localhost:8080/productos')
-.then(response => response.json())
-.then(data => {
-    data.forEach(element => {
-        crearCard(element.nombre, element.imagen, element.precio, element.descripcion)
-    
+cargarTodasCards();
+
 });
-}).catch(error => console.error('Error:', error));
+
+
+
+document.getElementById("buscadorFormulario").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const buscador = document.getElementById("buscador").value;
+    if(buscador != ""){
+        fetch(`http://localhost:8080/productos/nombre/${buscador}`)
+        .then(response => response.json())
+        .then(data => {
+            limpiarCards();
+            crearCard(data.nombre, data.imagen, data.precio, data.precio);
+        }).catch(error => console.error('Error:', error))
+        
+    }else{
+        cargarTodasCards();
+    }
 
 
 });
