@@ -34,7 +34,7 @@ p {
     padding: 0%;
 }
 .navbar-brand img{
-    max-width: 100%;
+    max-width: 90%;
     max-height: 100%; /* o el tamaño que quieras */
     object-fit: contain; /* para que no se deforme el logo */
     transition: all 0.3s ease;
