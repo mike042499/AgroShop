@@ -52,7 +52,7 @@ function tomar_datos(event){
 
 function agregarUsuario(usuario){
     
-    fetch(`http://localhost:8080/usuarios`, {
+    fetch(`http://localhost:8080/usuarios/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

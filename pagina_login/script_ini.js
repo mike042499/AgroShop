@@ -24,22 +24,56 @@ async function ingresoUsuario(event){
 }
 
 async function validarUsuario(funUsiario, funContraseña) {
-    try {
-        const response = await fetch(`http://localhost:8080/usuarios/correo/${funUsiario}`);
-        const data = await response.json();
-        
-        if (data.correo === funUsiario) {
-            if (data.contraseña === funContraseña) {
-                localStorage.setItem("ingresoUsuario", JSON.stringify(data));
-                return 2; // Usuario y contraseña correctos
-            }
-            return 1; // Solo usuario correcto
-        }
+    let usuario = {
+        correo: funUsiario,
+        contraseña: funContraseña
+    };
+    let numeroError;
 
-        return 0; // Usuario incorrecto
-    } catch (error) {
-        console.error('Error al validar el usuario:', error);
-    }
+    fetch(`http://localhost:8080/usuarios/login`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(usuario)
+      })
+        .then(response => {
+            console.log(response.status);  // esto está bien
+            if (response.ok) {
+                numeroError = 2;
+            }
+            return response.text();  // <-- RETORNAR el contenido de la respuesta
+        })
+        
+        .then(data => {
+            localStorage.setItem("jwt", JSON.stringify(data));
+            localStorage.setItem("ingresoUsuario", JSON.stringify(usuario.correo.split("@")[0]));
+            console.log(numeroError);
+            mostrarErrores(numeroError);
+        })
+        .then(message => {
+           mostrarModal(message, "black"); // mostrará: "Pedido borrado con exito"
+        })
+        .catch(error => {
+            console.error("Error al iniciar sesion:", error);
+            mostrarErrores(0);
+        });
+    // try {
+    //     const response = await fetch(`http://localhost:8080/usuarios/correo/${funUsiario}`);
+    //     const data = await response.json();
+        
+    //     if (data.correo === funUsiario) {
+    //         if (data.contraseña === funContraseña) {
+    //             localStorage.setItem("ingresoUsuario", JSON.stringify(data));
+    //             return 2; // Usuario y contraseña correctos
+    //         }
+    //         return 1; // Solo usuario correcto
+    //     }
+
+    //     return 0; // Usuario incorrecto
+    // } catch (error) {
+    //     console.error('Error al validar el usuario:', error);
+    // }
 }
 
 
