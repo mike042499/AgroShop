@@ -11,6 +11,7 @@ const contenedor = document.getElementById('contenedor-cards');
                         <img src="${imagen}" alt="Imagen de la card">
                         </div>
                         <div class="card-content">
+                            
                             <h2>${precio}</h2>
                             <p>${nombre}</p>
                             <p class = "descripcion" style="display: none;">${descripcion}</p>
