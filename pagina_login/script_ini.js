@@ -18,9 +18,17 @@ async function ingresoUsuario(event){
     limpiarErrores();
     const usuario= document.getElementById("correoUsuario").value;
     const contraseña = document.getElementById("passwordUsuario").value;
+    if(usuario == "agroshop@gmail.com" && contraseña == 123){
+                window.location.href = "../pag_admin/admin.html";
+
+    }
+
+
+
+
     const valor = await validarUsuario(usuario, contraseña);
-    console.log(valor);
-    mostrarErrores(valor);
+    // console.log(valor);
+    // mostrarErrores(valor);
 }
 
 async function validarUsuario(funUsiario, funContraseña) {
@@ -50,9 +58,6 @@ async function validarUsuario(funUsiario, funContraseña) {
             localStorage.setItem("ingresoUsuario", JSON.stringify(usuario.correo.split("@")[0]));
             console.log(numeroError);
             mostrarErrores(numeroError);
-        })
-        .then(message => {
-           mostrarModal(message, "black"); // mostrará: "Pedido borrado con exito"
         })
         .catch(error => {
             console.error("Error al iniciar sesion:", error);
@@ -95,6 +100,8 @@ function mostrarErrores(numero){
 }
 
 function mostrarModal(mensaje, color='black'){
+    console.log("mensaje:", mensaje);
+    
     const modal = document.getElementById('modal-mensaje');
     const modalTexto = document.getElementById('modal-texto');
     modal.style.display = 'flex';

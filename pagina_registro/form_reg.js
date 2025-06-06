@@ -50,23 +50,36 @@ function tomar_datos(event){
 
 
 
-function agregarUsuario(usuario){
-    
+function agregarUsuario(usuario){ 
     fetch(`http://localhost:8080/usuarios/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(usuario)
-      })
-        .then(response => response.text()) // <- importante: leer como texto
-        .then(message => {
-           mostrarModal(message, "black"); // mostrará: "Pedido borrado con exito"
-        })
-        .catch(error => {
-            console.error("Error al agregar pedido:", error);
-        });
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(errorMessage => {
+                // Lanzamos error con el mensaje recibido desde el backend
+                throw new Error(errorMessage || "Error al registrar el usuario");
+            });
+        }
+        return response.text();
+    })
+    .then(message => {
+        mostrarModal(message, "black");
+        
+    setTimeout(() => {
+        window.location.href = "/pagina_login/form_inicio.html";
+    }, 3000);
+    })
+    .catch(error => {
+        console.error("Error al agregar usuario:", error.message);
+        mostrarModal("Error: " + error.message, "red"); // Opcional: mostrar mensaje de error al usuario
+    });
 }
+
 
 function validarForm(nombre,email,celular,direccion,contraseña,validacion){
     let bandera=false;
@@ -171,7 +184,6 @@ function mostrarModal(mensaje, color='black'){
 
     setTimeout(() => {
         document.getElementById('modal-mensaje').style.display = 'none';
-        window.location.href = "/pagina_login/form_inicio.html";
     }, 3000);
 
 }

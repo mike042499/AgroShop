@@ -70,7 +70,7 @@ function renderizarTablaProductos() {
 
   
     data.forEach(element => {
-        crearTabla(element.id_producto, element.nombre, element.precio, element.imagen)
+        crearTabla(element.id, element.nombre, element.precio, element.imagen)
     
  });
  })
@@ -149,7 +149,7 @@ function mostrarModalActualizar(id){
   fetch(`http://localhost:8080/productos/${id}`)
   .then(response => response.json())
   .then(data => {
-  document.getElementById("id-producto").textContent = `Id: ${data.id_producto}`
+  document.getElementById("id-producto").textContent = `Id: ${data.id}`
   document.getElementById("nombreModal").value = data.nombre;
   document.getElementById("descripcionModal").value = data.descripcion;
   document.getElementById("precioModal").value = data.precio;
