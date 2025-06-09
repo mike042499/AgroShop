@@ -224,12 +224,19 @@ a:visited { /* Elimina el color del enlace al ser clickeado */
     border: 1px solid var(--black);
     cursor: pointer;
     box-shadow: 1px 1px 3px var(--black);
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .delete-item:hover{
     color: white;
     background-color: var(--primary-color);
     transition: 0.3s ease;
+}
+
+.delete-item img:hover path{
+    fill: white;
 }
 
 /* Overview */

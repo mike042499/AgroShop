@@ -64,7 +64,7 @@ function crearItem(nombre, precio, imagenRuta, cantidad){
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add("delete-item");
-    deleteButton.textContent = "X";
+    deleteButton.innerHTML = `<img src="../img/delete-icon.svg" alt="Borrar Producto">`;
 
     //Event Listener
     deleteButton.addEventListener('click', () => {
