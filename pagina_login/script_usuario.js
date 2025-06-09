@@ -1,15 +1,18 @@
 //Variables
 let usuarioIngresado = JSON.parse(localStorage.getItem("ingresoUsuario"));
 const contenedorHeader = document.getElementById("navbarSupportedContent").firstElementChild;
+const apiUrl = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
+
+console.log(usuarioIngresado)
 
 //Funciones
-function mostrarNombre(nombre){
+function mostrarNombre(usuario){
     const liElement = document.createElement('li');
     liElement.classList.add("nav-item");
 
     const mensajeNombre = document.createElement('a');
     mensajeNombre.classList.add("nav-link"); //Opcional
-    mensajeNombre.textContent = `Hola, ${nombre}!`;
+    mensajeNombre.textContent = `Hola, ${usuario}!`;
 
     const secondliElement = document.createElement('li');
     secondliElement.classList.add("nav-item");
@@ -24,9 +27,10 @@ function mostrarNombre(nombre){
     cerrarSesion.addEventListener('click', () =>{
         localStorage.removeItem("jwt");
         localStorage.removeItem("ingresoUsuario");
+        localStorage.removeItem("userData");
     })
 
-    if (nombre == null || nombre == ""){
+    if (usuario == null || usuario == ""){
         return;
     } else {
         //RemoverIniciarSesion
@@ -41,9 +45,44 @@ function mostrarNombre(nombre){
     }
 }
 
+async function obtnerPorCorreo(correo) {
+    return fetch(`${apiUrl}/usuarios/correo/${correo}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(datos => {
+            const usuario = {
+                nombre: datos.nombre,
+                direccion: datos.direccion,
+                id: datos.id_Usuario
+            };
+
+            localStorage.setItem("userData", JSON.stringify(usuario));
+
+            return usuario;
+        })
+        .catch(error => {
+            console.error('Error al obtener los datos:', error.message);
+            return null;
+        });
+}
+
 //Eventos
 document.addEventListener("DOMContentLoaded", () => {
-    if (usuarioIngresado != null){
-        mostrarNombre(usuarioIngresado);
+    if (usuarioIngresado) {
+        const datos = JSON.parse(localStorage.getItem("userData"));
+        
+        if (datos) {
+            mostrarNombre(datos.nombre);
+        } else {
+            obtnerPorCorreo(usuarioIngresado).then(usuario => {
+                if (usuario) {
+                    mostrarNombre(usuario.nombre);
+                }
+            });
+        }
     }
-})
+});

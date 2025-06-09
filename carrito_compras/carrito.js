@@ -132,6 +132,12 @@ botonPago.addEventListener('click', () => {
     if (!seleccion){
         alert("Debes elegir un método de pago")
     } else {
-        alert(`Vas a pagar un valor de ${formatoMoneda(totalFinal)} $`)
+        const jwt = JSON.parse(localStorage.getItem("ingresoUsuario"));
+
+        if (jwt != null){
+            alert(`Vas a pagar un valor de $${formatoMoneda(totalFinal)}`)
+        } else {
+            alert("Debes iniciar sesión")
+        }
     }
 })

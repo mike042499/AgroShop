@@ -58,7 +58,7 @@ async function validarUsuario(funUsiario, funContraseña) {
         
         .then(data => {
             localStorage.setItem("jwt", JSON.stringify(data));
-            localStorage.setItem("ingresoUsuario", JSON.stringify(usuario.correo.split("@")[0]));
+            localStorage.setItem("ingresoUsuario", JSON.stringify(usuario.correo));
             console.log(numeroError);
             mostrarErrores(numeroError);
         })
