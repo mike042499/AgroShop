@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: '../animaciones/registro_exitoso.json'
+    path: '../animaciones/login_exitoso.json'
     });
 
     document.getElementById("login").addEventListener("submit", ingresoUsuario);
