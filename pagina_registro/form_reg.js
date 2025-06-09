@@ -1,3 +1,4 @@
+const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
 const listaUsuarios = JSON.parse(localStorage.getItem("KeyUsuarios")) || [];
 let contador = listaUsuarios.length;
 
@@ -51,7 +52,7 @@ function tomar_datos(event){
 
 
 function agregarUsuario(usuario){ 
-    fetch(`http://localhost:8080/usuarios/register`, {
+    fetch(`${url}/usuarios/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

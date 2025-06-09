@@ -1,3 +1,6 @@
+
+const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
+
 const listaUsuarios = JSON.parse(localStorage.getItem("KeyUsuarios")) || [];
 let animacion;
 
@@ -38,7 +41,7 @@ async function validarUsuario(funUsiario, funContraseña) {
     };
     let numeroError;
 
-    fetch(`http://localhost:8080/usuarios/login`, {
+    fetch(`${url}/usuarios/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

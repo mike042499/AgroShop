@@ -1,4 +1,7 @@
 
+
+const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
+
 let productSelected = {};
 let cantidad = 1;
 let animacion;
@@ -24,7 +27,7 @@ function leerProducto(){
     console.log(typeof nombre);
     
 
-    fetch(`http://localhost:8080/productos/nombre/${nombre.toLowerCase()}`)
+    fetch(`${url}/productos/nombre/${nombre.toLowerCase()}`)
     .then(res => res.json())
     .then(data => {
       console.log("Producto:", data);
