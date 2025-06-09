@@ -22,7 +22,7 @@ function limpiarCards() {
 
 
 function cargarTodasCards(){
-    fetch('http://localhost:8080/productos')
+    fetch('https://master.d15bf1ypht0is4.amplifyapp.com/productos')
 .then(response => response.json())
 .then(data => {
     data.forEach(element => {
