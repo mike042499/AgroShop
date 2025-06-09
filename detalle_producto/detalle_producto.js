@@ -1,5 +1,4 @@
-
-
+//URL Backend
 const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
 
 let productSelected = {};
