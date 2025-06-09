@@ -1,4 +1,6 @@
 let listaProductos = [];
+const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
+
 
 function formatoMoneda(numero){
     let valorMoneda = numero.toLocaleString('es-Co', {
@@ -22,7 +24,7 @@ function limpiarCards() {
 
 
 function cargarTodasCards(){
-    fetch('https://master.d15bf1ypht0is4.amplifyapp.com/productos')
+    fetch(`${url}/productos` )
 .then(response => response.json())
 .then(data => {
     data.forEach(element => {
@@ -66,7 +68,7 @@ document.getElementById("buscadorFormulario").addEventListener("submit", functio
 
     const buscador = document.getElementById("buscador").value;
     if(buscador != ""){
-        fetch(`http://localhost:8080/productos/nombre/${buscador}`)
+        fetch(`${url}/productos/nombre/${buscador}`)
         .then(response => response.json())
         .then(data => {
             limpiarCards();
