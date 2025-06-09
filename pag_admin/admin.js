@@ -1,3 +1,6 @@
+const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
+
+
 let animacion;
 let listaProductos = JSON.parse(localStorage.getItem("KeyLista")) || [];
 let contador = listaProductos?.length;
@@ -64,7 +67,7 @@ function renderizarTablaProductos() {
 
   limpiarTablar();
 
-  fetch('http://localhost:8080/productos')
+  fetch(`${url}/productos`)
  .then(response => response.json())
  .then(data => {console.log(data)
 
@@ -84,7 +87,7 @@ function eliminarProducto(id) {
   
   if (confirm("¿Seguro que deseas eliminar este producto?")) {
 
-     fetch(`http://localhost:8080/productos/borrar/${id}`, {
+     fetch(`${url}/productos/borrar/${id}`, {
         method: "DELETE",
       })
       .then(response => {
@@ -118,7 +121,7 @@ function crearTabla(id, nombre, precio, imagen){
 
 function guardarProducto(producto){
 
- fetch(`http://localhost:8080/productos`, {
+ fetch(`${url}/productos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -146,7 +149,7 @@ function mostrarModalActualizar(id){
   modal.style.display = 'flex'
 
 
-  fetch(`http://localhost:8080/productos/${id}`)
+  fetch(`${url}/productos/${id}`)
   .then(response => response.json())
   .then(data => {
   document.getElementById("id-producto").textContent = `Id: ${data.id}`
@@ -191,7 +194,7 @@ async function actualizarProducto(){
     console.log(productoActualizado);
     
 
-  fetch(`http://localhost:8080/productos/editar/${idProducto}`, {
+  fetch(`${url}/productos/editar/${idProducto}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
