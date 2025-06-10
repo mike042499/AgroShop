@@ -203,6 +203,7 @@ botonPago.addEventListener('click', () => {
                     throw new Error(errorMessage || "Error al hacer el pedido");
                 } else if(response.ok){
                     mostrarModal(await response.text(), "black");
+                    localStorage.removeItem("carrito");
                 }
             })
             .catch(error => {

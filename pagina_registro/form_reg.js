@@ -1,6 +1,6 @@
 const url = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
-const listaUsuarios = JSON.parse(localStorage.getItem("KeyUsuarios")) || [];
-let contador = listaUsuarios.length;
+//const listaUsuarios = JSON.parse(localStorage.getItem("KeyUsuarios")) || [];
+//let contador = listaUsuarios.length;
 
 let animacion;
 
@@ -41,9 +41,9 @@ function tomar_datos(event){
 
         agregarUsuario(usuario);
 
-        listaUsuarios.push(usuario);
+        //listaUsuarios.push(usuario);
     // console.log(JSON.stringify(listaProductos, null, 2));
-        localStorage.setItem("KeyUsuarios",JSON.stringify(listaUsuarios));
+        //localStorage.setItem("KeyUsuarios",JSON.stringify(listaUsuarios));
         limpiarFormulario();
     }
 }
