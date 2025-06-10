@@ -8,6 +8,7 @@ const contenedor = document.getElementById("shopping-list");
 const subTotalElement = document.getElementById("sub-total");
 const botonPago = document.getElementById("total-cost");
 const elementoEnvio = document.getElementById("shipping-cost");
+const diaActual = new Date();
 
 //Funciones Lista
 
@@ -110,12 +111,46 @@ function formatoMoneda(numero){
     return valorMoneda
 }
 
+//Modal
+function mostrarModal(mensaje, color='black'){
+    const modal = document.getElementById('modal-mensaje');
+    const modalTexto = document.getElementById('modal-texto');
+    modal.style.display = 'flex';
+    modalTexto.textContent = mensaje;
+    modalTexto.style.color = color;
+    
+    animacion.goToAndPlay(0, true);
+
+    setTimeout(() => {
+        document.getElementById('modal-mensaje').style.display = 'none';
+        window.location.href = '../productos/productos.html';
+    }, 2500);
+}
+
 //Eventos
 
 document.addEventListener('DOMContentLoaded', () => {
     leerItems();
     mostrarItems();
+
+    //Modal
+    animacion = lottie.loadAnimation({
+    container: document.getElementById('modal-animacion'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: '../animaciones/pedido_realizado.json'
+    });
 })
+
+//Sumar días
+function sumarDias(fecha, dias){
+    let nuevaFecha = new Date(fecha);
+
+    nuevaFecha.setDate(nuevaFecha.getDate() + dias);
+
+    return nuevaFecha.toISOString().split('T')[0];
+}
 
 //A ventana de pago.
 botonPago.addEventListener('click', () => {
@@ -133,9 +168,47 @@ botonPago.addEventListener('click', () => {
         alert("Debes elegir un método de pago")
     } else {
         const jwt = JSON.parse(localStorage.getItem("ingresoUsuario"));
+        const datosUsuario = JSON.parse(localStorage.getItem("userData"));
+        let datosProductos = [];
+
+        for (let i in productosCarrito){
+            datosProductos.push({
+                "cantidad": productosCarrito[i].cantidad,
+                "productos": {
+                    "id": productosCarrito[i].id,
+                }
+            })
+        }
 
         if (jwt != null){
-            alert(`Vas a pagar un valor de $${formatoMoneda(totalFinal)}`)
+            fetch(`${apiUrl}/pedidos`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "direccionEntrega": datosUsuario.direccion,
+                    "fechaPedido": diaActual.toISOString().split('T')[0],
+                    "fechaSalida": sumarDias(diaActual, 3),
+                    "valorTotal": totalFinal,
+                    "usuario": {
+                        "id_Usuario": datosUsuario.id
+                    },
+                    "productosPedidos": datosProductos
+                })
+            })
+            .then(async response =>{
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    throw new Error(errorMessage || "Error al hacer el pedido");
+                } else if(response.ok){
+                    mostrarModal(await response.text(), "black");
+                }
+            })
+            .catch(error => {
+                console.error("Error al agregar usuario:", error.message);
+                mostrarModal("Error: " + error.message, "red"); // Opcional: mostrar mensaje de error al usuario
+            });
         } else {
             alert("Debes iniciar sesión")
         }

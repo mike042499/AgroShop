@@ -3,8 +3,6 @@ let usuarioIngresado = JSON.parse(localStorage.getItem("ingresoUsuario"));
 const contenedorHeader = document.getElementById("navbarSupportedContent").firstElementChild;
 const apiUrl = "https://xpnrrkuyw4.us-east-1.awsapprunner.com";
 
-console.log(usuarioIngresado)
-
 //Funciones
 function mostrarNombre(usuario){
     const liElement = document.createElement('li');
